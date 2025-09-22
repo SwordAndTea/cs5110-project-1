@@ -18,12 +18,12 @@ var player_state := PlayerState.InBed
 
 #signal player_state_changed(state)
 
-@onready var dialog: Label = $Dialog
+@onready var dialog: Label = $Dialog/Label
 
 func _ready() -> void:
 	dialog.visible = true
 	dialog.text = "Ugh..."
-	dialog.modulate = Color.DARK_SLATE_GRAY
+	dialog.modulate = Color.WHITE
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -56,7 +56,6 @@ func _physics_process(delta: float) -> void:
 func _on_fridge_body_entered(body: Node2D) -> void:
 	player_state = PlayerState.InFridge
 	dialog.visible = true
-	dialog.add_theme_font_size_override("font_size", 12)
 	dialog.text = "...Nothing but a half-eaten apple..."
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://7cgsasybcd18"]
+[gd_scene load_steps=17 format=4 uid="uid://7cgsasybcd18"]
 
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://c4hpih1ee5gsg" path="res://sprites/spritesheet.png" id="4_lbhrr"]
@@ -8,6 +8,15 @@
 [ext_resource type="Script" uid="uid://j7f6a20vqu5m" path="res://scripts/interactble_areas.gd" id="8_gee14"]
 [ext_resource type="Script" uid="uid://dpok8bcanjp2q" path="res://scripts/game_manager.gd" id="9_0tnpc"]
 [ext_resource type="AudioStream" uid="uid://dptsngylj68ji" path="res://Music/melancholic-tranquility-364766.mp3" id="23_bt5mj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.39215687)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 distance = 3.0
@@ -90,17 +99,27 @@ z_index = 1
 position = Vector2(-124, 29)
 collision_mask = 2
 
-[node name="Dialog" type="Label" parent="player"]
-offset_left = 51.0
-offset_top = -41.0
-offset_right = 91.0
-offset_bottom = -18.0
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(129, -12)
 zoom = Vector2(4, 4)
+
+[node name="Dialog" type="Control" parent="player"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = -93.0
+offset_right = 273.0
+offset_bottom = -56.0
+
+[node name="Label" type="Label" parent="player/Dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_gee14")
 
 [node name="boundaries" type="StaticBody2D" parent="."]
 position = Vector2(13, 58)
