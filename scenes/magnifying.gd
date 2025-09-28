@@ -23,6 +23,3 @@ func _input(event: InputEvent) -> void:
 				print("update global is magnifier pick up")
 				Global.is_magnifier_pick_up = true
 				magnifying.hide()
-
-func _on_bus_stop_phase_2() -> void:
-	pass # Replace with function body.

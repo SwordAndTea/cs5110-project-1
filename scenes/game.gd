@@ -2,6 +2,7 @@ extends Node2D
 @onready var scene_transition_animation=$SceneTransitionAnimation/AnimationPlayer
 @onready var rain: AnimatedSprite2D = $Rain
 @onready var rain_2: AnimatedSprite2D = $Rain2
+@onready var ringring: AudioStreamPlayer2D = $"Interactive/Alarm Area/Alarm/alarm clock/ringring"
 
 var pointer = load("res://sprites/pointer.png")
 var clicker = load("res://sprites/Clicker.png")
@@ -18,5 +19,7 @@ func _ready():
 	scene_transition_animation.play("fade_out")	
 	rain.play()
 	rain_2.play()
+	if Global.alarm==false:
+		ringring.play()
 	if Global.player_coming_inside == true:
 		player.position=Global.player_position_when_coming_inside
