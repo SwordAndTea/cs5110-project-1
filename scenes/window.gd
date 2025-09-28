@@ -1,12 +1,11 @@
 extends TextureRect
-var new_texture = preload("res://sprites/Fridge Opening.png") # Preload the new texture
-
 @onready var hovering_object : bool = false
 @export_multiline var message_text : String = ""
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and hovering_object:
 		Global.update_dialog_text.emit(message_text)
+		"res://scenes/window.gd"
 		
 func _on_mouse_entered() -> void:
 	hovering_object = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blwhl3dosu17j"
-path="res://.godot/imported/Fridge Opening.png-6407876bb07063378a15a1093c5e8b99.ctex"
+uid="uid://7r740j5i7in5"
+path="res://.godot/imported/fridge color.png-6c8b9cb2628a824539a08aa4ca3af8e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Fridge Opening.png"
-dest_files=["res://.godot/imported/Fridge Opening.png-6407876bb07063378a15a1093c5e8b99.ctex"]
+source_file="res://sprites/fridge color.png"
+dest_files=["res://.godot/imported/fridge color.png-6c8b9cb2628a824539a08aa4ca3af8e3.ctex"]
 
 [params]
 

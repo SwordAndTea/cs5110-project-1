@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvo5pti0gv222"
-path="res://.godot/imported/toaster.PNG-44801cf1f67d74e2f604b8f53e4d0075.ctex"
+uid="uid://de4fqackxfkcy"
+path="res://.godot/imported/bus sprite.png-7cb3e4551ae8874f5a2de22f03e79739.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/toaster.PNG"
-dest_files=["res://.godot/imported/toaster.PNG-44801cf1f67d74e2f604b8f53e4d0075.ctex"]
+source_file="res://sprites/bus sprite.png"
+dest_files=["res://.godot/imported/bus sprite.png-7cb3e4551ae8874f5a2de22f03e79739.ctex"]
 
 [params]
 

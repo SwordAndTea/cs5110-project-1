@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://03f5e32jp8ui"
+path="res://.godot/imported/bus starting.mp3-fb5b6790842264cf3b2ee01af61b04e0.mp3str"
+
+[deps]
+
+source_file="res://Music/bus starting.mp3"
+dest_files=["res://.godot/imported/bus starting.mp3-fb5b6790842264cf3b2ee01af61b04e0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

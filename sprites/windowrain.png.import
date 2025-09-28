@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5s7poi3byivr"
-path="res://.godot/imported/IMG_4332.png-e28dfbf256db5bba9e62905b23b636ac.ctex"
+uid="uid://bw1yh36mrecst"
+path="res://.godot/imported/windowrain.png-f2cdc0008362e8d21b72d654381e70cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/IMG_4332.png"
-dest_files=["res://.godot/imported/IMG_4332.png-e28dfbf256db5bba9e62905b23b636ac.ctex"]
+source_file="res://sprites/windowrain.png"
+dest_files=["res://.godot/imported/windowrain.png-f2cdc0008362e8d21b72d654381e70cd.ctex"]
 
 [params]
 
