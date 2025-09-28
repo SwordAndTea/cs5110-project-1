@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://g8kn4thbgeo4"]
+
+[ext_resource type="Texture2D" uid="uid://b8wosagsva7qp" path="res://sprites/Plant.PNG" id="1_odjdt"]
+[ext_resource type="Script" uid="uid://dliii7whgi006" path="res://scripts/interactable.gd" id="2_a88lo"]
+
+[node name="Plant" type="TextureRect"]
+texture = ExtResource("1_odjdt")
+script = ExtResource("2_a88lo")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

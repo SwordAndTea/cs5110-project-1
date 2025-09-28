@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/calming-rain-257596.mp3-023da97734abc6e09581a
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

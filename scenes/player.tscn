@@ -1,58 +1,74 @@
 [gd_scene load_steps=9 format=3 uid="uid://btamyw4txrvit"]
 
-[ext_resource type="Texture2D" uid="uid://dfwnixw6joyni" path="res://sprites/Sprite-0003.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dlt5xgcyehs76" path="res://scripts/player.gd" id="1_g2els"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
-atlas = ExtResource("1_3vyb7")
-region = Rect2(0, 0, 20, 30)
+[ext_resource type="Texture2D" uid="uid://2dbo1m7fgv4r" path="res://sprites/animation.png" id="2_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("1_3vyb7")
-region = Rect2(20, 0, 20, 30)
+atlas = ExtResource("2_g2els")
+region = Rect2(5, 0, 193, 380)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
-atlas = ExtResource("1_3vyb7")
-region = Rect2(40, 0, 20, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
-atlas = ExtResource("1_3vyb7")
-region = Rect2(60, 0, 20, 30)
+atlas = ExtResource("2_g2els")
+region = Rect2(199, 0, 193, 380)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g2els")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_qhqgy")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqkch")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qlg0r")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"run",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
-radius = 10.6301
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 92.0
+height = 450.0
+
+[sub_resource type="Gradient" id="Gradient_g2els"]
+offsets = PackedFloat32Array(0, 0.11333334, 0.62666667)
+colors = PackedColorArray(1, 1, 1, 1, 0.7183099, 0.7183099, 0.7183099, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
+gradient = SubResource("Gradient_g2els")
+width = 1025
+height = 1009
+fill = 1
+fill_from = Vector2(0.48130846, 0.48117402)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(71, 4)
-scale = Vector2(2, 2)
+position = Vector2(201.5, -192.81343)
+scale = Vector2(1.2072538, 1.2072535)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.321856
+animation = &"run"
+autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(71, 24)
-shape = SubResource("CircleShape2D_fjrip")
+position = Vector2(208, -205)
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="Dialog" type="Label" parent="."]
+offset_left = 49.0
+offset_top = -30.0
+offset_right = 89.0
+offset_bottom = -7.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(222, -227)
+texture = SubResource("GradientTexture2D_qhqgy")
+height = 308.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(497, -346)
+zoom = Vector2(0.63, 0.63)
+limit_left = -4095
+limit_right = 2200

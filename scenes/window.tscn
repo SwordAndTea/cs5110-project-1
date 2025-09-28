@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtf3trvgd8xv1"]
+
+[ext_resource type="Texture2D" uid="uid://5bavhvbvmvsn" path="res://sprites/Window.PNG" id="1_to7fh"]
+[ext_resource type="Script" uid="uid://bk5gtdwts8leq" path="res://scenes/window.gd" id="2_qvkcj"]
+
+[node name="Window" type="TextureRect"]
+offset_left = -3526.0
+offset_top = -772.0
+offset_right = -3052.0
+offset_bottom = -451.0
+texture = ExtResource("1_to7fh")
+script = ExtResource("2_qvkcj")
+message_text = "Another dreary day..."
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,201 @@
+[gd_scene load_steps=23 format=3 uid="uid://bmgfabx2nd453"]
+
+[ext_resource type="Script" uid="uid://cdghhlwd28ukr" path="res://scenes/busstop.gd" id="1_eru8g"]
+[ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_hr2fb"]
+[ext_resource type="Texture2D" uid="uid://bjo2dkt8vylyj" path="res://sprites/bus stop.png" id="2_xjad6"]
+[ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="3_eru8g"]
+[ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="6_4jjng"]
+[ext_resource type="AudioStream" uid="uid://d22vy5qo5lt2o" path="res://Music/calming-rain-257596.mp3" id="7_jhu8c"]
+[ext_resource type="Script" uid="uid://bsdc6xfm3cglh" path="res://scripts/canvas_layer.gd" id="8_7q8y5"]
+[ext_resource type="AudioStream" uid="uid://dptsngylj68ji" path="res://Music/melancholic-tranquility-364766.mp3" id="8_p876l"]
+[ext_resource type="AudioStream" uid="uid://bc62vreuikch0" path="res://Music/dry-thunder-364468.mp3" id="9_uk1l0"]
+[ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="9_xrhou"]
+[ext_resource type="Script" uid="uid://bdr40y7vte066" path="res://scenes/magnifying.gd" id="10_uk1l0"]
+[ext_resource type="Texture2D" uid="uid://b1j1b2k83cjxs" path="res://sprites/magnifying glass.png" id="11_vca46"]
+[ext_resource type="Texture2D" uid="uid://b0as0v1oa04x" path="res://sprites/Rain.png" id="12_vca46"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4jjng"]
+distance = 3.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l05rq"]
+distance = -64.25195
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_324qj"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjad6"]
+size = Vector2(141, 274.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q8y5"]
+size = Vector2(102, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q8y5"]
+atlas = ExtResource("12_vca46")
+region = Rect2(0, 0, 3508, 2480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrhou"]
+atlas = ExtResource("12_vca46")
+region = Rect2(3508, 0, 3508, 2480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rqqc"]
+atlas = ExtResource("12_vca46")
+region = Rect2(7016, 0, 3508, 2480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fl7oo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7q8y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrhou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rqqc")
+}],
+"loop": true,
+"name": &"rain",
+"speed": 6.0
+}]
+
+[node name="bus stop" type="Node2D"]
+position = Vector2(-3348, -584)
+script = ExtResource("1_eru8g")
+
+[node name="player" parent="." instance=ExtResource("1_hr2fb")]
+z_index = 2
+position = Vector2(-915, 121)
+collision_mask = 2
+max_zoom = 9.0
+
+[node name="floor" type="Polygon2D" parent="player"]
+z_index = -1
+position = Vector2(-3121.9998, -207.99998)
+rotation = 0.0014689598
+scale = Vector2(12.199671, 9.060534)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+polygon = PackedVector2Array(-53.005264, 32, 235.45264, 32.00006, 523.5481, 32.23097, 514.9662, 63.058002, -53, 60)
+
+[node name="boundaries" type="StaticBody2D" parent="."]
+position = Vector2(-352, 110)
+scale = Vector2(4, 4)
+collision_layer = 2
+
+[node name="bottom boundary" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(-2, 10)
+shape = SubResource("WorldBoundaryShape2D_4jjng")
+
+[node name="left boundary" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(-103, -37.75)
+rotation = 1.5782
+shape = SubResource("WorldBoundaryShape2D_l05rq")
+
+[node name="right boundary" type="CollisionShape2D" parent="boundaries"]
+position = Vector2(230.25, -45.75)
+shape = SubResource("WorldBoundaryShape2D_324qj")
+
+[node name="InsideDetect" type="Area2D" parent="."]
+position = Vector2(-240, -2)
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InsideDetect"]
+position = Vector2(-244.5, -74.75)
+shape = SubResource("RectangleShape2D_xjad6")
+
+[node name="magnifying" type="Area2D" parent="."]
+position = Vector2(781, 42)
+script = ExtResource("10_uk1l0")
+message_text = "…Maybe this could help…?
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="magnifying"]
+position = Vector2(-371, 61)
+shape = SubResource("RectangleShape2D_7q8y5")
+
+[node name="Sprite2D" type="TextureRect" parent="magnifying/CollisionShape2D"]
+offset_left = -36.0
+offset_top = -44.5
+offset_right = 57.0
+offset_bottom = 31.5
+rotation = 0.22786745
+texture = ExtResource("11_vca46")
+metadata/_edit_use_anchors_ = true
+
+[node name="BusStop" type="Sprite2D" parent="."]
+position = Vector2(926, -285)
+texture = ExtResource("2_xjad6")
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(930, -338)
+texture = ExtResource("3_eru8g")
+
+[node name="Rain" type="AnimatedSprite2D" parent="."]
+z_index = 3
+position = Vector2(396.08063, -423.37497)
+scale = Vector2(0.75292325, 0.75292337)
+sprite_frames = SubResource("SpriteFrames_fl7oo")
+animation = &"rain"
+frame_progress = 0.40694404
+
+[node name="Rain2" type="AnimatedSprite2D" parent="."]
+z_index = 3
+position = Vector2(2844.9998, -417.00006)
+scale = Vector2(0.75292325, 0.75292337)
+sprite_frames = SubResource("SpriteFrames_fl7oo")
+animation = &"rain"
+frame_progress = 0.40694404
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(1.135, 1.135)
+transform = Transform2D(1.135, 0, 0, 1.135, 0, 0)
+script = ExtResource("8_7q8y5")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = -1.2441067
+anchor_top = -1.299
+anchor_right = -1.457067
+anchor_bottom = -1.299
+offset_left = 1742.4619
+offset_top = 898.13965
+offset_right = 2612.462
+offset_bottom = 1008.1398
+theme_override_fonts/font = ExtResource("9_xrhou")
+theme_override_font_sizes/font_size = 33
+text = "text here..."
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 3.0
+one_shot = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(-643, -467)
+color = Color(0.50534403, 0.5053441, 0.50534385, 1)
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("6_4jjng")]
+z_index = 3
+position = Vector2(560, 140)
+
+[node name="rain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jhu8c")
+volume_db = -17.954
+autoplay = true
+parameters/looping = false
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_p876l")
+autoplay = true
+parameters/looping = false
+
+[node name="thunder" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_uk1l0")
+volume_db = -6.599
+autoplay = true
+parameters/looping = false
+
+[connection signal="body_entered" from="InsideDetect" to="." method="_on_inside_detect_body_entered"]
+[connection signal="mouse_entered" from="magnifying" to="magnifying" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="magnifying" to="magnifying" method="_on_mouse_exited"]
