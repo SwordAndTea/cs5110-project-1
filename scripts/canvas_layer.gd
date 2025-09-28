@@ -1,11 +1,10 @@
-class_name GameWindow
 extends CanvasLayer
 
 @onready var label: Label = $Label
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	Global.update_text.connect(_update_text)
+	Global.update_dialog_text.connect(_update_text)
 	
 func _update_text(string : String):
 	label.text = string

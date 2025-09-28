@@ -4,18 +4,6 @@ class_name Player
 const SPEED = 400.0
 const JUMP_VELOCITY = 0.0
 
-enum PlayerState {
-	Moving,
-	InBed,
-	InWindow,
-	InDesk,
-	InToaster,
-	InFridge,
-	InPlant,
-}
-
-var player_state := PlayerState.InBed
-
 #signal player_state_changed(state)
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var dialog: Label = $Dialog
@@ -52,10 +40,6 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
-		# handle dialog
-		if player_state == PlayerState.InBed and dialog.visible:
-			dialog.visible = false
-			player_state = PlayerState.Moving
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

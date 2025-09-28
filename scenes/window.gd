@@ -6,7 +6,7 @@ var new_texture = preload("res://sprites/Fridge Opening.png") # Preload the new 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and hovering_object:
-		SignalBus.update_text.emit(message_text)
+		Global.update_dialog_text.emit(message_text)
 		
 func _on_mouse_entered() -> void:
 	hovering_object = true

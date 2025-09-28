@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bmgfabx2nd453"]
+[gd_scene load_steps=24 format=3 uid="uid://bmgfabx2nd453"]
 
 [ext_resource type="Script" uid="uid://cdghhlwd28ukr" path="res://scenes/busstop.gd" id="1_eru8g"]
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_hr2fb"]
@@ -12,7 +12,8 @@
 [ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="9_xrhou"]
 [ext_resource type="Script" uid="uid://bdr40y7vte066" path="res://scenes/magnifying.gd" id="10_uk1l0"]
 [ext_resource type="Texture2D" uid="uid://b1j1b2k83cjxs" path="res://sprites/magnifying glass.png" id="11_vca46"]
-[ext_resource type="Texture2D" uid="uid://b0as0v1oa04x" path="res://sprites/Rain.png" id="12_vca46"]
+[ext_resource type="Texture2D" uid="uid://b0as0v1oa04x" path="res://sprites/rain.png" id="12_vca46"]
+[ext_resource type="PackedScene" uid="uid://cb1mvlw5mwov2" path="res://scenes/item_status_bar.tscn" id="13_7q8y5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4jjng"]
 distance = 3.0
@@ -121,6 +122,18 @@ rotation = 0.22786745
 texture = ExtResource("11_vca46")
 metadata/_edit_use_anchors_ = true
 
+[node name="Sprite2D2" type="TextureRect" parent="magnifying/CollisionShape2D"]
+offset_left = -52.0
+offset_top = -34.5
+offset_right = 41.0
+offset_bottom = 41.5
+texture = ExtResource("11_vca46")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="magnifying"]
+position = Vector2(127, 48.5)
+shape = SubResource("RectangleShape2D_7q8y5")
+
 [node name="BusStop" type="Sprite2D" parent="."]
 position = Vector2(926, -285)
 texture = ExtResource("2_xjad6")
@@ -153,7 +166,7 @@ script = ExtResource("8_7q8y5")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = -1.2441067
+anchor_left = -1.457067
 anchor_top = -1.299
 anchor_right = -1.457067
 anchor_bottom = -1.299
@@ -195,6 +208,13 @@ stream = ExtResource("9_uk1l0")
 volume_db = -6.599
 autoplay = true
 parameters/looping = false
+
+[node name="Rain3" type="Sprite2D" parent="."]
+position = Vector2(-294.99994, -344)
+scale = Vector2(0.72769713, 0.7276971)
+texture = ExtResource("12_vca46")
+
+[node name="ItemStatusBar" parent="." instance=ExtResource("13_7q8y5")]
 
 [connection signal="body_entered" from="InsideDetect" to="." method="_on_inside_detect_body_entered"]
 [connection signal="mouse_entered" from="magnifying" to="magnifying" method="_on_mouse_entered"]

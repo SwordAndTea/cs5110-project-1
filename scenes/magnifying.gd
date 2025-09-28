@@ -7,7 +7,6 @@ extends Area2D
 var pointer = load("res://sprites/pointer.png")
 var clicker = load("res://sprites/Clicker.png")
 
-var pickup = false
 
 func _on_mouse_entered() -> void:
 	Input.set_custom_mouse_cursor(clicker)
@@ -19,11 +18,10 @@ func _on_mouse_exited() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and hovering_object:
-			Global.update_text.emit(message_text)
-			if pickup == false:
-				pickup = true
+			if Global.is_magnifier_pick_up == false:
+				print("update global is magnifier pick up")
+				Global.is_magnifier_pick_up = true
 				magnifying.hide()
-				Global.phase2.emit()
 
 
 func _on_bus_stop_phase_2() -> void:
