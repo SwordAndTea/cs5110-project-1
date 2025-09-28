@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://7cgsasybcd18"]
+[gd_scene load_steps=72 format=3 uid="uid://7cgsasybcd18"]
 
 [ext_resource type="Script" uid="uid://yxcxguixvey" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -7,15 +7,13 @@
 [ext_resource type="Script" uid="uid://ni4g0tkl7njy" path="res://scenes/area_2d.gd" id="8_e1j6l"]
 [ext_resource type="Script" uid="uid://cxitp8j7cupf3" path="res://scenes/fridge.gd" id="9_sww3w"]
 [ext_resource type="PackedScene" uid="uid://g8kn4thbgeo4" path="res://scenes/plant.tscn" id="9_vtaks"]
-[ext_resource type="Texture2D" uid="uid://cxpyyi4a7rrje" path="res://sprites/Fridge Sprite.png" id="10_qnb83"]
+[ext_resource type="Texture2D" uid="uid://88c23yx0mqg7" path="res://sprites/Fridge Sprite.png" id="10_qnb83"]
 [ext_resource type="Script" uid="uid://bsdc6xfm3cglh" path="res://scripts/canvas_layer.gd" id="10_vtaks"]
 [ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="11_kvpfn"]
 [ext_resource type="Script" uid="uid://b3gtaghnuy2cn" path="res://scenes/journal_area.gd" id="11_suyxu"]
 [ext_resource type="AudioStream" uid="uid://5unghyvweeq5" path="res://Music/fridge-open-and-close-100149.mp3" id="11_sww3w"]
 [ext_resource type="Texture2D" uid="uid://5bavhvbvmvsn" path="res://sprites/Window.PNG" id="12_ir15t"]
 [ext_resource type="Script" uid="uid://cis3o2721306s" path="res://scenes/plant_area.gd" id="12_pl11u"]
-[ext_resource type="Texture2D" uid="uid://bvo5pti0gv222" path="res://sprites/toaster.PNG" id="12_rysoc"]
-[ext_resource type="Texture2D" uid="uid://5df30iglffb5" path="res://sprites/IMG_4332.PNG" id="12_trtic"]
 [ext_resource type="Texture2D" uid="uid://cbgg0365ijw32" path="res://sprites/IMG_4333.PNG" id="13_ir15t"]
 [ext_resource type="Script" uid="uid://cox5mysd3py5f" path="res://scenes/umbrella_area.gd" id="13_sgl2t"]
 [ext_resource type="Texture2D" uid="uid://diu7gqtk2tda4" path="res://sprites/Journal and Phone.PNG" id="13_ssvqc"]
@@ -27,13 +25,20 @@
 [ext_resource type="Texture2D" uid="uid://c0f42bmm6xqtu" path="res://sprites/Alarm clock.png" id="16_37s47"]
 [ext_resource type="Texture2D" uid="uid://chensgob5kiq" path="res://sprites/zoom in 1.PNG" id="16_264po"]
 [ext_resource type="Script" uid="uid://depoik3m5d8fq" path="res://scenes/toaster_area.gd" id="16_qnb83"]
+[ext_resource type="Texture2D" uid="uid://ch41yda5grqpg" path="res://sprites/Toaster sprite.png" id="18_02fa5"]
+[ext_resource type="AudioStream" uid="uid://ro33rwkjirv4" path="res://Music/toaster-46712.mp3" id="18_nepv3"]
+[ext_resource type="AudioStream" uid="uid://jmolx0uyutnr" path="res://Music/alarm clock.mp3" id="21_7025r"]
 [ext_resource type="AudioStream" uid="uid://dptsngylj68ji" path="res://Music/melancholic-tranquility-364766.mp3" id="23_bt5mj"]
 [ext_resource type="Script" uid="uid://dkhhghrpcm1dp" path="res://scenes/zoom_in_1.gd" id="23_suyxu"]
+[ext_resource type="Texture2D" uid="uid://d2e06j4isqdkx" path="res://sprites/sparkle.png" id="25_nepv3"]
+[ext_resource type="Texture2D" uid="uid://bw1yh36mrecst" path="res://sprites/windowrain.png" id="28_gxtfn"]
+[ext_resource type="Texture2D" uid="uid://b5s7poi3byivr" path="res://sprites/IMG_4332.png" id="29_nepv3"]
 [ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="30_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://cb1mvlw5mwov2" path="res://scenes/item_status_bar.tscn" id="31_qouja"]
 [ext_resource type="Shader" uid="uid://cfqty0llnstyd" path="res://shaders/magnifying_effect.gdshader" id="32_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://ceigpsw10a4o1" path="res://sprites/mask.png" id="33_js0lu"]
 [ext_resource type="Script" uid="uid://bnro6klm0i0pr" path="res://scripts/magnifying_effect.gd" id="34_js0lu"]
+[ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="36_twgab"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 distance = 3.0
@@ -54,26 +59,26 @@ size = Vector2(435, 260)
 radius = 135.5
 height = 564.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sww3w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7025r"]
 atlas = ExtResource("10_qnb83")
-region = Rect2(0, 0, 1112, 1604)
+region = Rect2(0, 0, 2048, 2048)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnb83"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4url"]
 atlas = ExtResource("10_qnb83")
-region = Rect2(1112, 0, 1112, 1604)
+region = Rect2(2048, 0, 2048, 2048)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_suyxu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ool0"]
 atlas = ExtResource("10_qnb83")
-region = Rect2(1112, 0, 1112, 1604)
+region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pl11u"]
 animations = [{
 "frames": [{
 "duration": 40.0,
-"texture": SubResource("AtlasTexture_sww3w")
+"texture": SubResource("AtlasTexture_7025r")
 }, {
 "duration": 0.1,
-"texture": SubResource("AtlasTexture_qnb83")
+"texture": SubResource("AtlasTexture_m4url")
 }],
 "loop": false,
 "name": &"Open",
@@ -81,7 +86,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_suyxu")
+"texture": SubResource("AtlasTexture_8ool0")
 }],
 "loop": true,
 "name": &"closed",
@@ -103,6 +108,61 @@ size = Vector2(123, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnb83"]
 size = Vector2(132.5, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr1ej"]
+atlas = ExtResource("18_02fa5")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05nbr"]
+atlas = ExtResource("18_02fa5")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sl42"]
+atlas = ExtResource("18_02fa5")
+region = Rect2(4096, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaba0"]
+atlas = ExtResource("18_02fa5")
+region = Rect2(6144, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_458eo"]
+atlas = ExtResource("18_02fa5")
+region = Rect2(8192, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3rex"]
+atlas = ExtResource("18_02fa5")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_458eo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr1ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05nbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sl42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaba0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_458eo")
+}],
+"loop": false,
+"name": &"toast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3rex")
+}],
+"loop": true,
+"name": &"toaster",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1j6l"]
 size = Vector2(89.25, 105.75)
@@ -145,11 +205,40 @@ animations = [{
 shader = ExtResource("32_v2yb1")
 shader_parameter/magnification = 2.0000000475
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
+atlas = ExtResource("28_gxtfn")
+region = Rect2(400, 0, 3000, 2480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02fa5"]
+atlas = ExtResource("28_gxtfn")
+region = Rect2(3400, 0, 3000, 2480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nepv3"]
+atlas = ExtResource("28_gxtfn")
+region = Rect2(6400, 0, 3000, 2480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7025r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twgab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02fa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nepv3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="game" type="Node2D"]
 script = ExtResource("1_5newe")
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
-z_index = 2
+z_index = 4
 position = Vector2(-4023, -205)
 collision_mask = 2
 max_zoom = 9.0
@@ -190,7 +279,7 @@ shape = SubResource("RectangleShape2D_sgl2t")
 [node name="Interactive" type="Node" parent="."]
 
 [node name="Window Area" type="Area2D" parent="Interactive"]
-z_index = 1
+z_index = 3
 position = Vector2(-3278, -604)
 script = ExtResource("8_e1j6l")
 message_text = "Another dreary day..."
@@ -209,22 +298,24 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Fridge Area" type="Area2D" parent="Interactive"]
 script = ExtResource("9_sww3w")
-message_text = "Nothing but a half eaten apple..."
+message_text = "Nothing but a half-eaten apple..."
 
 [node name="Fridge" type="CollisionShape2D" parent="Interactive/Fridge Area"]
 position = Vector2(701, -437)
 shape = SubResource("CapsuleShape2D_e1j6l")
 
 [node name="FridgeAnim" type="AnimatedSprite2D" parent="Interactive/Fridge Area/Fridge"]
-position = Vector2(-14.5, -3.1204834)
+position = Vector2(-3.999999, -29)
 scale = Vector2(0.37679848, 0.3767984)
 sprite_frames = SubResource("SpriteFrames_pl11u")
 animation = &"Open"
 autoplay = "closed"
+frame = 1
+frame_progress = 1.0
 
 [node name="Fridge Sound" type="AudioStreamPlayer2D" parent="Interactive/Fridge Area/Fridge/FridgeAnim"]
 stream = ExtResource("11_sww3w")
-volume_db = 6.058
+volume_db = 17.165
 
 [node name="Journal Area" type="Area2D" parent="Interactive"]
 script = ExtResource("11_suyxu")
@@ -305,13 +396,17 @@ message_text = "Burnt… just my luck…"
 position = Vector2(4587.75, 129.5)
 shape = SubResource("RectangleShape2D_qnb83")
 
-[node name="Toaster" type="TextureRect" parent="Interactive/Toaster Area/Toaster"]
-offset_left = -79.75
-offset_top = -46.5
-offset_right = 81.44995
-offset_bottom = 46.5
-texture = ExtResource("12_rysoc")
-metadata/_edit_use_anchors_ = true
+[node name="burnt toast" type="AnimatedSprite2D" parent="Interactive/Toaster Area/Toaster"]
+position = Vector2(1.2500029, 46.5)
+scale = Vector2(0.164917, 0.164917)
+sprite_frames = SubResource("SpriteFrames_458eo")
+animation = &"toast"
+
+[node name="toaster sound" type="AudioStreamPlayer2D" parent="Interactive/Toaster Area/Toaster/burnt toast"]
+position = Vector2(6.063629, -266.80072)
+scale = Vector2(6.0636554, 6.0636554)
+stream = ExtResource("18_nepv3")
+volume_db = 11.884
 
 [node name="Alarm Area" type="Area2D" parent="Interactive"]
 script = ExtResource("15_e1j6l")
@@ -329,6 +424,39 @@ animation = &"run"
 autoplay = "run"
 
 [node name="ringring" type="AudioStreamPlayer2D" parent="Interactive/Alarm Area/Alarm/alarm clock"]
+stream = ExtResource("21_7025r")
+parameters/looping = false
+
+[node name="Findables" type="Node" parent="."]
+
+[node name="toaster find" type="Area2D" parent="Findables"]
+
+[node name="toaster find" type="Sprite2D" parent="Findables/toaster find"]
+position = Vector2(1257.0242, -483.70084)
+scale = Vector2(0.31708395, 0.31708395)
+texture = ExtResource("25_nepv3")
+
+[node name="fridge find" type="Area2D" parent="Findables"]
+
+[node name="fridge find" type="Sprite2D" parent="Findables/fridge find"]
+position = Vector2(612, -590)
+scale = Vector2(0.3181818, 0.31818184)
+texture = ExtResource("25_nepv3")
+
+[node name="plant find" type="Sprite2D" parent="Findables"]
+position = Vector2(-894, -338.54544)
+scale = Vector2(0.27272728, 0.27272728)
+texture = ExtResource("25_nepv3")
+
+[node name="window find" type="Sprite2D" parent="Findables"]
+position = Vector2(-3476, -498)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("25_nepv3")
+
+[node name="kitty find" type="Sprite2D" parent="Findables"]
+position = Vector2(-3696.25, -185.90909)
+scale = Vector2(0.21590555, 0.2537879)
+texture = ExtResource("25_nepv3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(1.135, 1.135)
@@ -353,7 +481,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ZoomIn1" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(510.13214, 305.7269)
+position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
 texture = ExtResource("16_264po")
 script = ExtResource("23_suyxu")
@@ -362,21 +490,32 @@ script = ExtResource("23_suyxu")
 wait_time = 3.0
 one_shot = true
 
+[node name="ItemStatusBar" parent="." instance=ExtResource("31_qouja")]
+
+[node name="MagnifyingEffect" type="Sprite2D" parent="."]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_gxtfn")
+position = Vector2(-2517.5, -825.5)
+scale = Vector2(0.4033203, 0.4033203)
+texture = ExtResource("33_js0lu")
+script = ExtResource("34_js0lu")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(-220, 70)
+color = Color(0.3180198, 0.31801978, 0.31801975, 1)
+
 [node name="Kitchen" type="Sprite2D" parent="."]
-position = Vector2(1452, -602)
-texture = ExtResource("12_trtic")
+position = Vector2(1452, -604)
+texture = ExtResource("29_nepv3")
 
 [node name="Living Room" type="Sprite2D" parent="."]
-position = Vector2(-759, -607)
+position = Vector2(-759, -606)
 texture = ExtResource("13_ir15t")
 
 [node name="Bedroom" type="Sprite2D" parent="."]
 position = Vector2(-2901, -609)
 texture = ExtResource("14_ca42v")
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2(-220, 70)
-color = Color(0.3180198, 0.31801978, 0.31801975, 1)
 
 [node name="rain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_p57ef")
@@ -397,18 +536,40 @@ parameters/looping = false
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("30_sgl2t")]
 z_index = 3
-position = Vector2(1, 0)
+position = Vector2(-123.999756, -39.818176)
 
-[node name="ItemStatusBar" parent="." instance=ExtResource("31_qouja")]
+[node name="Rain" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(-3301, -617.5)
+scale = Vector2(0.21133338, 0.16088709)
+sprite_frames = SubResource("SpriteFrames_7025r")
+frame_progress = 0.39533964
 
-[node name="MagnifyingEffect" type="Sprite2D" parent="."]
-visible = false
-z_index = 100
-material = SubResource("ShaderMaterial_gxtfn")
-position = Vector2(-2439, -904)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("33_js0lu")
-script = ExtResource("34_js0lu")
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(-3291, -603.75)
+scale = Vector2(0.12423206, 0.23726414)
+texture = ExtResource("36_twgab")
+
+[node name="Window" type="TextureRect" parent="."]
+z_index = 2
+offset_left = -303.0
+offset_top = -831.0
+offset_right = 171.0
+offset_bottom = -510.0
+texture = ExtResource("12_ir15t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(-67, -668.75)
+scale = Vector2(0.124232076, 0.23726414)
+texture = ExtResource("36_twgab")
+
+[node name="Rain2" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-84, -678)
+scale = Vector2(0.21133338, 0.16088709)
+sprite_frames = SubResource("SpriteFrames_7025r")
+frame_progress = 0.600637
 
 [connection signal="body_entered" from="OutsideDetect" to="." method="_on_outside_detect_body_entered"]
 [connection signal="mouse_entered" from="Interactive/Window Area" to="Interactive/Window Area" method="_on_mouse_entered"]
@@ -433,7 +594,7 @@ script = ExtResource("34_js0lu")
 [connection signal="mouse_exited" from="Interactive/Kitty Area/Kitty/Kitty" to="Interactive/Kitty Area/Kitty/Kitty" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Interactive/Toaster Area" to="Interactive/Toaster Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interactive/Toaster Area" to="Interactive/Toaster Area" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Interactive/Toaster Area/Toaster/Toaster" to="Interactive/Toaster Area/Toaster/Toaster" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interactive/Toaster Area/Toaster/Toaster" to="Interactive/Toaster Area/Toaster/Toaster" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Interactive/Alarm Area" to="Interactive/Alarm Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interactive/Alarm Area" to="Interactive/Alarm Area" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Window" to="Window" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Window" to="Window" method="_on_mouse_exited"]

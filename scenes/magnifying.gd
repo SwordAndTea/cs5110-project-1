@@ -18,11 +18,11 @@ func _on_mouse_exited() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and hovering_object:
+			Global.update_dialog_text.emit(message_text)
 			if Global.is_magnifier_pick_up == false:
 				print("update global is magnifier pick up")
 				Global.is_magnifier_pick_up = true
 				magnifying.hide()
-
 
 func _on_bus_stop_phase_2() -> void:
 	pass # Replace with function body.

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/toaster-46712.mp3-ed25ca75e4f91231d4348be53ec
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
