@@ -15,4 +15,3 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and hovering_object:
 		alarm_clock.play("clock")
 		
-		

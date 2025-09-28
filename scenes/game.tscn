@@ -1,8 +1,10 @@
-[gd_scene load_steps=72 format=3 uid="uid://7cgsasybcd18"]
+[gd_scene load_steps=86 format=3 uid="uid://7cgsasybcd18"]
 
 [ext_resource type="Script" uid="uid://yxcxguixvey" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://bidu5e4ynknqs" path="res://sprites/window colored.png" id="4_458eo"]
 [ext_resource type="AudioStream" uid="uid://d22vy5qo5lt2o" path="res://Music/calming-rain-257596.mp3" id="5_p57ef"]
+[ext_resource type="Texture2D" uid="uid://7r740j5i7in5" path="res://sprites/fridge color.png" id="7_pr1ej"]
 [ext_resource type="AudioStream" uid="uid://bc62vreuikch0" path="res://Music/dry-thunder-364468.mp3" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://ni4g0tkl7njy" path="res://scenes/area_2d.gd" id="8_e1j6l"]
 [ext_resource type="Script" uid="uid://cxitp8j7cupf3" path="res://scenes/fridge.gd" id="9_sww3w"]
@@ -25,20 +27,25 @@
 [ext_resource type="Texture2D" uid="uid://c0f42bmm6xqtu" path="res://sprites/Alarm clock.png" id="16_37s47"]
 [ext_resource type="Texture2D" uid="uid://chensgob5kiq" path="res://sprites/zoom in 1.PNG" id="16_264po"]
 [ext_resource type="Script" uid="uid://depoik3m5d8fq" path="res://scenes/toaster_area.gd" id="16_qnb83"]
-[ext_resource type="Texture2D" uid="uid://ch41yda5grqpg" path="res://sprites/Toaster sprite.png" id="18_02fa5"]
+[ext_resource type="Texture2D" uid="uid://b1t77j5xv8lmx" path="res://sprites/Toaster sprite.png" id="18_02fa5"]
 [ext_resource type="AudioStream" uid="uid://ro33rwkjirv4" path="res://Music/toaster-46712.mp3" id="18_nepv3"]
 [ext_resource type="AudioStream" uid="uid://jmolx0uyutnr" path="res://Music/alarm clock.mp3" id="21_7025r"]
 [ext_resource type="AudioStream" uid="uid://dptsngylj68ji" path="res://Music/melancholic-tranquility-364766.mp3" id="23_bt5mj"]
+[ext_resource type="Script" uid="uid://co0j56isvbf4w" path="res://scenes/fridge_find.gd" id="23_m4url"]
 [ext_resource type="Script" uid="uid://dkhhghrpcm1dp" path="res://scenes/zoom_in_1.gd" id="23_suyxu"]
 [ext_resource type="Texture2D" uid="uid://d2e06j4isqdkx" path="res://sprites/sparkle.png" id="25_nepv3"]
+[ext_resource type="Script" uid="uid://j03lyvt4f460" path="res://scenes/window_find_2.gd" id="25_oaba0"]
+[ext_resource type="Texture2D" uid="uid://cox6no011tpwo" path="res://sprites/zoom in 2a.png" id="28_8ool0"]
 [ext_resource type="Texture2D" uid="uid://bw1yh36mrecst" path="res://sprites/windowrain.png" id="28_gxtfn"]
 [ext_resource type="Texture2D" uid="uid://b5s7poi3byivr" path="res://sprites/IMG_4332.png" id="29_nepv3"]
 [ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="30_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://bx00mqj4rywwe" path="res://sprites/zoom in 3.png" id="31_458eo"]
 [ext_resource type="PackedScene" uid="uid://cb1mvlw5mwov2" path="res://scenes/item_status_bar.tscn" id="31_qouja"]
 [ext_resource type="Shader" uid="uid://cfqty0llnstyd" path="res://shaders/magnifying_effect.gdshader" id="32_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://ceigpsw10a4o1" path="res://sprites/mask.png" id="33_js0lu"]
 [ext_resource type="Script" uid="uid://bnro6klm0i0pr" path="res://scripts/magnifying_effect.gd" id="34_js0lu"]
 [ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="36_twgab"]
+[ext_resource type="AudioStream" uid="uid://38w4yx4fgsk5" path="res://Music/magic-244951.mp3" id="40_05nbr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 distance = 3.0
@@ -55,6 +62,29 @@ size = Vector2(328, 860)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl11u"]
 size = Vector2(435, 260)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qswn"]
+atlas = ExtResource("12_ir15t")
+region = Rect2(0, 0, 474, 321)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm0al"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_458eo")
+}],
+"loop": false,
+"name": &"color",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qswn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e1j6l"]
 radius = 135.5
 height = 564.0
@@ -70,6 +100,10 @@ region = Rect2(2048, 0, 2048, 2048)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ool0"]
 atlas = ExtResource("10_qnb83")
 region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fedci"]
+atlas = ExtResource("7_pr1ej")
+region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pl11u"]
 animations = [{
@@ -91,6 +125,14 @@ animations = [{
 "loop": true,
 "name": &"closed",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fedci")
+}],
+"loop": true,
+"name": &"color",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhx41"]
@@ -201,6 +243,12 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ool0"]
+size = Vector2(31, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4re6"]
+size = Vector2(56, 54)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxtfn"]
 shader = ExtResource("32_v2yb1")
 shader_parameter/magnification = 2.0000000475
@@ -230,6 +278,29 @@ animations = [{
 "texture": SubResource("AtlasTexture_nepv3")
 }],
 "loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm0al"]
+atlas = ExtResource("12_ir15t")
+region = Rect2(0, 0, 474, 321)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4re6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_458eo")
+}],
+"loop": true,
+"name": &"colored",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm0al")
+}],
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -280,7 +351,7 @@ shape = SubResource("RectangleShape2D_sgl2t")
 
 [node name="Window Area" type="Area2D" parent="Interactive"]
 z_index = 3
-position = Vector2(-3278, -604)
+position = Vector2(-3281, -655)
 script = ExtResource("8_e1j6l")
 message_text = "Another dreary day..."
 
@@ -288,12 +359,10 @@ message_text = "Another dreary day..."
 position = Vector2(-11.5, 0)
 shape = SubResource("RectangleShape2D_pl11u")
 
-[node name="Window" type="TextureRect" parent="Interactive/Window Area/Window"]
-offset_left = -236.5
-offset_top = -168.0
-offset_right = 237.5
-offset_bottom = 153.0
-texture = ExtResource("12_ir15t")
+[node name="Window" type="AnimatedSprite2D" parent="Interactive/Window Area/Window"]
+position = Vector2(0.5, -8)
+sprite_frames = SubResource("SpriteFrames_rm0al")
+autoplay = "default"
 metadata/_edit_use_anchors_ = true
 
 [node name="Fridge Area" type="Area2D" parent="Interactive"]
@@ -308,10 +377,8 @@ shape = SubResource("CapsuleShape2D_e1j6l")
 position = Vector2(-3.999999, -29)
 scale = Vector2(0.37679848, 0.3767984)
 sprite_frames = SubResource("SpriteFrames_pl11u")
-animation = &"Open"
+animation = &"closed"
 autoplay = "closed"
-frame = 1
-frame_progress = 1.0
 
 [node name="Fridge Sound" type="AudioStreamPlayer2D" parent="Interactive/Fridge Area/Fridge/FridgeAnim"]
 stream = ExtResource("11_sww3w")
@@ -437,25 +504,40 @@ scale = Vector2(0.31708395, 0.31708395)
 texture = ExtResource("25_nepv3")
 
 [node name="fridge find" type="Area2D" parent="Findables"]
+position = Vector2(-9, -7)
+script = ExtResource("23_m4url")
+message_text = "Oh... love you, too..."
 
-[node name="fridge find" type="Sprite2D" parent="Findables/fridge find"]
-position = Vector2(612, -590)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/fridge find"]
+position = Vector2(622.5, -579.5)
+shape = SubResource("RectangleShape2D_8ool0")
+
+[node name="fridge find" type="Sprite2D" parent="Findables/fridge find/CollisionShape2D"]
+position = Vector2(2.499985, 2.5)
 scale = Vector2(0.3181818, 0.31818184)
 texture = ExtResource("25_nepv3")
 
 [node name="plant find" type="Sprite2D" parent="Findables"]
-position = Vector2(-894, -338.54544)
+position = Vector2(-5813, 775)
 scale = Vector2(0.27272728, 0.27272728)
-texture = ExtResource("25_nepv3")
-
-[node name="window find" type="Sprite2D" parent="Findables"]
-position = Vector2(-3476, -498)
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("25_nepv3")
 
 [node name="kitty find" type="Sprite2D" parent="Findables"]
 position = Vector2(-3696.25, -185.90909)
 scale = Vector2(0.21590555, 0.2537879)
+texture = ExtResource("25_nepv3")
+
+[node name="window find" type="Area2D" parent="Findables"]
+position = Vector2(-3486, -560)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("25_oaba0")
+message_text = "… Actually, it’s kind of soothing…"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/window find"]
+position = Vector2(44, 17)
+shape = SubResource("RectangleShape2D_i4re6")
+
+[node name="window find" type="Sprite2D" parent="Findables/window find/CollisionShape2D"]
 texture = ExtResource("25_nepv3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -484,6 +566,20 @@ visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
 texture = ExtResource("16_264po")
+script = ExtResource("23_suyxu")
+
+[node name="ZoomIn2" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(510.13214, 320.70483)
+scale = Vector2(0.38951355, 0.3895137)
+texture = ExtResource("28_8ool0")
+script = ExtResource("23_suyxu")
+
+[node name="ZoomIn3" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(510.13214, 320.70483)
+scale = Vector2(0.38951355, 0.3895137)
+texture = ExtResource("31_458eo")
 script = ExtResource("23_suyxu")
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
@@ -534,29 +630,31 @@ volume_db = -6.599
 autoplay = true
 parameters/looping = false
 
+[node name="magic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_05nbr")
+
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("30_sgl2t")]
 z_index = 3
-position = Vector2(-123.999756, -39.818176)
+position = Vector2(632, 2947)
 
 [node name="Rain" type="AnimatedSprite2D" parent="."]
 z_index = 2
-position = Vector2(-3301, -617.5)
+position = Vector2(-3304, -668.5)
 scale = Vector2(0.21133338, 0.16088709)
 sprite_frames = SubResource("SpriteFrames_7025r")
 frame_progress = 0.39533964
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(-3291, -603.75)
+position = Vector2(-3294, -654.75)
 scale = Vector2(0.12423206, 0.23726414)
 texture = ExtResource("36_twgab")
 
-[node name="Window" type="TextureRect" parent="."]
+[node name="Window 2" type="AnimatedSprite2D" parent="."]
 z_index = 2
-offset_left = -303.0
-offset_top = -831.0
-offset_right = 171.0
-offset_bottom = -510.0
-texture = ExtResource("12_ir15t")
+position = Vector2(-69, -670)
+sprite_frames = SubResource("SpriteFrames_i4re6")
+animation = &"colored"
+autoplay = "default"
 metadata/_edit_use_anchors_ = true
 
 [node name="Bg2" type="Sprite2D" parent="."]
@@ -574,8 +672,6 @@ frame_progress = 0.600637
 [connection signal="body_entered" from="OutsideDetect" to="." method="_on_outside_detect_body_entered"]
 [connection signal="mouse_entered" from="Interactive/Window Area" to="Interactive/Window Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interactive/Window Area" to="Interactive/Window Area" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Interactive/Window Area/Window/Window" to="Interactive/Window Area/Window/Window" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Interactive/Window Area/Window/Window" to="Interactive/Window Area/Window/Window" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Interactive/Fridge Area" to="Interactive/Fridge Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interactive/Fridge Area" to="Interactive/Fridge Area" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Interactive/Journal Area" to="Interactive/Journal Area" method="_on_mouse_entered"]
@@ -596,5 +692,7 @@ frame_progress = 0.600637
 [connection signal="mouse_exited" from="Interactive/Toaster Area" to="Interactive/Toaster Area" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Interactive/Alarm Area" to="Interactive/Alarm Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interactive/Alarm Area" to="Interactive/Alarm Area" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Window" to="Window" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Window" to="Window" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Findables/fridge find" to="Findables/fridge find" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Findables/fridge find" to="Findables/fridge find" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Findables/window find" to="Findables/window find" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Findables/window find" to="Findables/window find" method="_on_mouse_exited"]

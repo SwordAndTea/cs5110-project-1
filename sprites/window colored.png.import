@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvo5pti0gv222"
-path="res://.godot/imported/toaster.PNG-44801cf1f67d74e2f604b8f53e4d0075.ctex"
+uid="uid://bidu5e4ynknqs"
+path="res://.godot/imported/window colored.png-981e8dde3787a7e6f62b9b31d84196d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/toaster.PNG"
-dest_files=["res://.godot/imported/toaster.PNG-44801cf1f67d74e2f604b8f53e4d0075.ctex"]
+source_file="res://sprites/window colored.png"
+dest_files=["res://.godot/imported/window colored.png-981e8dde3787a7e6f62b9b31d84196d1.ctex"]
 
 [params]
 
