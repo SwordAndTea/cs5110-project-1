@@ -14,7 +14,7 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion:
 		position = get_global_mouse_position()
 		
-	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) and visible:
 		if magnification == 2.0:
 			magnification = 4.0
 			material.set_shader_parameter("magnification", 4.0)
