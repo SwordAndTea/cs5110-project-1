@@ -14,6 +14,13 @@ const JUMP_VELOCITY = 0.0
 #this is where i pasted movement code
 @onready var _animated_sprite = $AnimatedSprite2D
 
+func _ready() -> void:
+	if Global.current_scene_name == Global.SceneName.InDoor:
+		camera_2d.limit_right = 2200
+	elif Global.current_scene_name == Global.SceneName.OutDoor:
+		camera_2d.limit_right = 2600
+	
+
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		_animated_sprite.play("run")
