@@ -16,6 +16,6 @@ func _on_mouse_exited() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and hovering_object:
-		Global.update_text.emit(message_text)
+		Global.update_dialog_text.emit(message_text)
 		fridge_anim.play("Open")
 		fridge_sound.play()

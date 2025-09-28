@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://7cgsasybcd18"]
+[gd_scene load_steps=56 format=3 uid="uid://7cgsasybcd18"]
 
 [ext_resource type="Script" uid="uid://yxcxguixvey" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -30,6 +30,10 @@
 [ext_resource type="AudioStream" uid="uid://dptsngylj68ji" path="res://Music/melancholic-tranquility-364766.mp3" id="23_bt5mj"]
 [ext_resource type="Script" uid="uid://dkhhghrpcm1dp" path="res://scenes/zoom_in_1.gd" id="23_suyxu"]
 [ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="30_sgl2t"]
+[ext_resource type="PackedScene" uid="uid://cb1mvlw5mwov2" path="res://scenes/item_status_bar.tscn" id="31_qouja"]
+[ext_resource type="Shader" uid="uid://cfqty0llnstyd" path="res://shaders/magnifying_effect.gdshader" id="32_v2yb1"]
+[ext_resource type="Texture2D" uid="uid://ceigpsw10a4o1" path="res://sprites/mask.png" id="33_js0lu"]
+[ext_resource type="Script" uid="uid://bnro6klm0i0pr" path="res://scripts/magnifying_effect.gd" id="34_js0lu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 distance = 3.0
@@ -136,6 +140,10 @@ animations = [{
 "name": &"run",
 "speed": 9.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxtfn"]
+shader = ExtResource("32_v2yb1")
+shader_parameter/magnification = 2.0000000475
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_5newe")
@@ -390,6 +398,17 @@ parameters/looping = false
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("30_sgl2t")]
 z_index = 3
 position = Vector2(1, 0)
+
+[node name="ItemStatusBar" parent="." instance=ExtResource("31_qouja")]
+
+[node name="MagnifyingEffect" type="Sprite2D" parent="."]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_gxtfn")
+position = Vector2(-2439, -904)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("33_js0lu")
+script = ExtResource("34_js0lu")
 
 [connection signal="body_entered" from="OutsideDetect" to="." method="_on_outside_detect_body_entered"]
 [connection signal="mouse_entered" from="Interactive/Window Area" to="Interactive/Window Area" method="_on_mouse_entered"]

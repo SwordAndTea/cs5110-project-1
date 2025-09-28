@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0as0v1oa04x"
-path="res://.godot/imported/rain.png-bbe58c656ad809149c21eb47d97e4d56.ctex"
+uid="uid://ceigpsw10a4o1"
+path="res://.godot/imported/mask.png-5403fce0f0c69d7184a2784f953221c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/rain.png"
-dest_files=["res://.godot/imported/rain.png-bbe58c656ad809149c21eb47d97e4d56.ctex"]
+source_file="res://sprites/mask.png"
+dest_files=["res://.godot/imported/mask.png-5403fce0f0c69d7184a2784f953221c8.ctex"]
 
 [params]
 
