@@ -39,6 +39,7 @@
 [ext_resource type="Script" uid="uid://bujei6imcg4ri" path="res://scenes/kitty_find.gd" id="27_rm0al"]
 [ext_resource type="Texture2D" uid="uid://cox6no011tpwo" path="res://sprites/zoom in 2a.png" id="28_8ool0"]
 [ext_resource type="Texture2D" uid="uid://bw1yh36mrecst" path="res://sprites/windowrain.png" id="28_gxtfn"]
+
 [ext_resource type="Texture2D" uid="uid://da70siskvswii" path="res://sprites/zoom in 0a.png" id="29_h3rex"]
 [ext_resource type="Texture2D" uid="uid://b5s7poi3byivr" path="res://sprites/IMG_4332.png" id="29_nepv3"]
 [ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="30_sgl2t"]
@@ -268,7 +269,7 @@ height = 842.04846
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxtfn"]
 shader = ExtResource("32_v2yb1")
-shader_parameter/magnification = 2.0000000475
+shader_parameter/magnification = 4.000000142499999
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
 atlas = ExtResource("28_gxtfn")

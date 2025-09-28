@@ -11,6 +11,13 @@ var alarm = false
 signal magnifier_pick_up
 signal umbrella_pick_up
 
+enum SceneName {
+	InDoor,
+	OutDoor,
+}
+
+var current_scene_name := SceneName.InDoor
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("focus") and magnifier_pick_up:
 		focus_on = not focus_on
