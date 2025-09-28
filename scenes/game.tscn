@@ -37,7 +37,7 @@
 [ext_resource type="Script" uid="uid://j03lyvt4f460" path="res://scenes/window_find_2.gd" id="25_oaba0"]
 [ext_resource type="Texture2D" uid="uid://cox6no011tpwo" path="res://sprites/zoom in 2a.png" id="28_8ool0"]
 [ext_resource type="Texture2D" uid="uid://bw1yh36mrecst" path="res://sprites/windowrain.png" id="28_gxtfn"]
-[ext_resource type="Texture2D" uid="uid://b5s7poi3byivr" path="res://sprites/IMG_4332.png" id="29_nepv3"]
+[ext_resource type="Texture2D" uid="uid://b5s7poi3byivr" path="res://sprites/IMG_4332.PNG" id="29_nepv3"]
 [ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="30_sgl2t"]
 [ext_resource type="Texture2D" uid="uid://bx00mqj4rywwe" path="res://sprites/zoom in 3.png" id="31_458eo"]
 [ext_resource type="PackedScene" uid="uid://cb1mvlw5mwov2" path="res://scenes/item_status_bar.tscn" id="31_qouja"]
@@ -251,7 +251,7 @@ size = Vector2(56, 54)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxtfn"]
 shader = ExtResource("32_v2yb1")
-shader_parameter/magnification = 2.0000000475
+shader_parameter/magnification = 4.000000142499999
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
 atlas = ExtResource("28_gxtfn")
@@ -617,18 +617,18 @@ texture = ExtResource("14_ca42v")
 stream = ExtResource("5_p57ef")
 volume_db = -17.954
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_bt5mj")
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [node name="thunder" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_u5sy4")
 volume_db = -6.599
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [node name="magic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("40_05nbr")
