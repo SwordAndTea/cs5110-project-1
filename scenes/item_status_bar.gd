@@ -5,9 +5,9 @@ extends CanvasLayer
 func _ready() -> void:
 	# magnifier is pickup in second scene, so we need to check and set visibility
 	# here to make sure the ItemStatusBar in every scene can be updated
-	visible = Global.is_umbrella_pick_up
+	visible = Global.is_magnifier_pick_up
 	
-	Global.umbrella_pick_up.connect(_on_umbrella_pick_up)
+	Global.magnifier_pick_up.connect(_on_magnifier_pick_up)
 	
-func _on_umbrella_pick_up():
+func _on_magnifier_pick_up():
 	visible = true

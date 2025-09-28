@@ -6,8 +6,10 @@ var current_scene = null
 var player_position_when_coming_inside=Vector2(2000,-189)
 var player_coming_inside = false
 var focus_on = false
+var alarm = false
 
 signal magnifier_pick_up
+signal umbrella_pick_up
 
 enum SceneName {
 	InDoor,
@@ -25,6 +27,12 @@ var is_magnifier_pick_up := false:
 		is_magnifier_pick_up = value
 		if value == true:
 			magnifier_pick_up.emit()
+			
+var is_umbrella_pick_up := false:
+	set(value):
+		is_umbrella_pick_up = value
+		if value == true:
+			umbrella_pick_up.emit()
 
 func _ready():
 	var root = get_tree().root
