@@ -1,0 +1,84 @@
+[gd_scene load_steps=6 format=3 uid="uid://qwkk3jryklca"]
+
+[ext_resource type="Texture2D" uid="uid://dijjj67xqloek" path="res://sprites/bgsun1.png" id="1_u1awn"]
+[ext_resource type="Texture2D" uid="uid://d1c0a0brnv323" path="res://sprites/bgsun2.png" id="2_g6v6d"]
+
+[sub_resource type="Animation" id="Animation_u1awn"]
+resource_name = "sunshine"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BgSunCopy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.1666665, 14.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BgSun:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.1666665, 14.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g6v6d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BgSunCopy:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BgSun:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1y06q"]
+_data = {
+&"RESET": SubResource("Animation_g6v6d"),
+&"sunshine": SubResource("Animation_u1awn")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BgSun" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+position = Vector2(-2418, -922)
+texture = ExtResource("1_u1awn")
+
+[node name="BgSunCopy" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_as_relative = false
+position = Vector2(970, -923)
+texture = ExtResource("2_g6v6d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1y06q")
+}

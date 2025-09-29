@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b678v5pif5yg1"]
+
+[ext_resource type="Script" uid="uid://qevipj3p4v8v" path="res://scripts/credits.gd" id="1_c1t8d"]
+[ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="1_nm7lk"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_c1t8d")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-1780, -576, 1892, -551, 1810, 727, -1796, 605, -1796, -641)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_nm7lk")

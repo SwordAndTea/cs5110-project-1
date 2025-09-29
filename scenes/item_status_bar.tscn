@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb1mvlw5mwov2"]
+[gd_scene load_steps=5 format=3 uid="uid://cb1mvlw5mwov2"]
 
 [ext_resource type="Script" uid="uid://bqv3ayja7e0ic" path="res://scenes/item_status_bar.gd" id="1_8wb2k"]
 [ext_resource type="Texture2D" uid="uid://b1j1b2k83cjxs" path="res://sprites/magnifying glass.png" id="2_nu2e5"]
+[ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="3_nu2e5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm73u"]
 bg_color = Color(0.6156863, 0.6156863, 0.6156863, 0.11764706)
@@ -35,3 +36,14 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_nu2e5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 106.0
+offset_right = 147.0
+offset_bottom = 157.0
+theme_override_fonts/normal_font = ExtResource("3_nu2e5")
+theme_override_font_sizes/normal_font_size = 23
+text = "( Press F  
+ to focus)"

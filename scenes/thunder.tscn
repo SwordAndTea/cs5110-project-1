@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://6oppypin36r0"]
+
+[ext_resource type="AudioStream" uid="uid://bc62vreuikch0" path="res://Music/dry-thunder-364468.mp3" id="1_gsm58"]
+
+[node name="thunder" type="AudioStreamPlayer"]
+stream = ExtResource("1_gsm58")
+volume_db = -6.599
+autoplay = true
+parameters/looping = true

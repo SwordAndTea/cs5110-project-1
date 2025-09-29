@@ -1,6 +1,7 @@
 extends Area2D
 @onready var zoom_in_4: Sprite2D = $"../Umbrella/UmbrellaGet/ZoomIn4"
 @onready var hovering_object : bool = false
+@onready var umbrella_get: AudioStreamPlayer = $"../../umbrella get"
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"):
@@ -12,6 +13,7 @@ func _input(event: InputEvent) -> void:
 				if Global.is_umbrella_pick_up == false:
 					print("update global is umbrella pick up")
 					Global.is_umbrella_pick_up = true
+					umbrella_get.play()
 	
 @export_multiline var message_text : String = ""
 
