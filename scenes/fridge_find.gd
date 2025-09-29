@@ -3,8 +3,9 @@ extends Area2D
 @onready var zoom_in_2: Sprite2D = $"../../CanvasLayer/ZoomIn2"
 @onready var fridge_anim: AnimatedSprite2D = $"../../Interactive/Fridge Area/Fridge/FridgeAnim"
 @onready var magic: AudioStreamPlayer = $"../../magic"
-@onready var fridge_find: Sprite2D = $"CollisionShape2D/fridge find"
 @onready var fridge_found : bool = false
+
+signal fridgefound
 
 var pointer = load("res://sprites/pointer.png")
 var clicker = load("res://sprites/Clicker.png")
@@ -21,6 +22,7 @@ func _on_mouse_exited() -> void:
 	if Global.is_magnifier_pick_up and Global.focus_on==true:
 		Input.set_custom_mouse_cursor(pointer)
 		hovering_object=false
+
 	elif Global.is_magnifier_pick_up and fridge_found==true:
 		Input.set_custom_mouse_cursor(pointer)
 		hovering_object=false
@@ -33,9 +35,9 @@ func _input(event: InputEvent) -> void:
 		zoom_in_2.visible=true
 		fridge_anim.play("color")
 		magic.play()
-		fridge_find.hide()
 		fridge_found=true
-		
+		fridgefound.emit()
+	
 	elif event.is_action_pressed("left_click") and hovering_object and fridge_found==true:
 		Global.update_dialog_text.emit(message_text)
 		zoom_in_2.visible=true

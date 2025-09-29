@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8juj013xt8p8"]
+
+[ext_resource type="AudioStream" uid="uid://d22vy5qo5lt2o" path="res://Music/calming-rain-257596.mp3" id="1_tchf5"]
+
+[node name="rain" type="AudioStreamPlayer"]
+stream = ExtResource("1_tchf5")
+volume_db = -17.954
+autoplay = true
+parameters/looping = true
