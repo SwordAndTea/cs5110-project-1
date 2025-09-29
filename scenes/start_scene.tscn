@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6o2jifspybxk"]
+
+[ext_resource type="Texture2D" uid="uid://cbtj75nkwxmks" path="res://sprites/playerwalk1.png" id="1_cokmr"]
+
+[node name="StartScene" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22.00003, 0.9999924)
+scale = Vector2(1.5520834, 1.2900002)
+texture = ExtResource("1_cokmr")
