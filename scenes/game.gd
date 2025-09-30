@@ -8,12 +8,7 @@ var pointer = load("res://sprites/pointer.png")
 var clicker = load("res://sprites/Clicker.png")
 @onready var player: CharacterBody2D = $player
 
-func _on_outside_detect_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D:
-		scene_transition_animation.play("fadein")
-		await get_tree().create_timer(0.5).timeout
-		Global.goto_scene("res://scenes/busstop.tscn")
-		Global.current_scene_name = Global.SceneName.OutDoor
+var is_ready := false
 
 func _ready():
 	scene_transition_animation.get_parent().get_node("ColorRect").color.a = 255
@@ -22,5 +17,25 @@ func _ready():
 	rain_2.play()
 	if Global.alarm==false:
 		ringring.play()
-	if Global.player_coming_inside == true:
-		player.position=Global.player_position_when_coming_inside
+		
+	is_ready = true
+
+func _enter_tree() -> void:
+	if is_ready:
+		_ready()
+
+var has_triggered_change_scene := false
+
+func _on_outside_detect_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		if not has_triggered_change_scene:
+			scene_transition_animation.play("fadein")
+			await get_tree().create_timer(0.5).timeout
+			Global.goto_scene(Global.SceneName.Busstop)
+			player.position = Global.player_position_when_coming_inside
+			has_triggered_change_scene = true
+
+
+func _on_outside_detect_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		has_triggered_change_scene = false
