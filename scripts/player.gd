@@ -18,7 +18,7 @@ const JUMP_VELOCITY = 0.0
 func _ready() -> void:
 	if Global.current_scene_name == Global.SceneName.InDoor:
 		camera_2d.limit_right = 2200
-	elif Global.current_scene_name == Global.SceneName.OutDoor:
+	elif Global.current_scene_name == Global.SceneName.Busstop:
 		camera_2d.limit_right = 1100
 
 func _process(_delta):
@@ -32,7 +32,7 @@ func _process(_delta):
 	elif Input.is_action_pressed("ui_left") and Global.is_umbrella_pick_up == true and Global.current_scene_name ==Global.SceneName.InDoor:
 		_animated_sprite.play("run")
 	
-	elif Global.current_scene_name == Global.SceneName.OutDoor and Global.is_umbrella_pick_up == true:
+	elif Global.current_scene_name == Global.SceneName.Busstop and Global.is_umbrella_pick_up == true:
 		_animated_sprite.visible=false
 		umbrella.visible = true
 		if Input.is_action_pressed("ui_right"):
