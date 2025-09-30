@@ -15,7 +15,7 @@ signal bus_left
 
 var indoor_scene : Node
 var busstop_scene := preload("res://scenes/busstop.tscn").instantiate()
-var credits_scene := preload("res://credits.tscn").instantiate()
+var credits_scene := preload("res://scenes/credits.tscn").instantiate()
 
 enum SceneName {
 	InDoor,
@@ -27,7 +27,7 @@ var current_scene_name := SceneName.InDoor
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("focus") and magnifier_pick_up:
+	if event.is_action_pressed("focus") and is_magnifier_pick_up and current_scene_name == SceneName.InDoor:
 		focus_on = not focus_on
 
 var is_magnifier_pick_up := false:

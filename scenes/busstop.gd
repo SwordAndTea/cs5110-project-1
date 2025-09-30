@@ -75,5 +75,6 @@ func _on_bus_leave_body_entered(body: Node2D) -> void:
 func _on_end_game_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		scene_transition_animation.play("fadein")
+		await scene_transition_animation.animation_finished
 		await get_tree().create_timer(0.5).timeout
 		Global.goto_scene(Global.SceneName.Credits)
