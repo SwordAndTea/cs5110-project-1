@@ -889,6 +889,7 @@ z_index = 1
 z_as_relative = false
 
 [connection signal="body_entered" from="OutsideDetect" to="." method="_on_outside_detect_body_entered"]
+[connection signal="body_exited" from="OutsideDetect" to="." method="_on_outside_detect_body_exited"]
 [connection signal="mouse_entered" from="Interactive/Window Area" to="Interactive/Window Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interactive/Window Area" to="Interactive/Window Area" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Interactive/Fridge Area" to="Interactive/Fridge Area" method="_on_mouse_entered"]

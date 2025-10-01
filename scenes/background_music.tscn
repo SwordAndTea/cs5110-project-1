@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://be88vk7gku2cn"]
+
+[ext_resource type="AudioStream" uid="uid://d22vy5qo5lt2o" path="res://Music/calming-rain-257596.mp3" id="1_0rulj"]
+[ext_resource type="AudioStream" uid="uid://bc62vreuikch0" path="res://Music/dry-thunder-364468.mp3" id="2_83psx"]
+[ext_resource type="AudioStream" uid="uid://dptsngylj68ji" path="res://Music/melancholic-tranquility-364766.mp3" id="3_u6r47"]
+
+[node name="BackgroundMusic" type="Node"]
+
+[node name="Rain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_0rulj")
+volume_db = -17.954
+autoplay = true
+parameters/looping = true
+
+[node name="Thunder" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_83psx")
+volume_db = -6.599
+autoplay = true
+parameters/looping = true
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u6r47")
+autoplay = true
+parameters/looping = true

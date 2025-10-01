@@ -331,6 +331,7 @@ parameters/looping = false
 [node name="UmbrellaStatusBar" parent="." instance=ExtResource("17_tgyys")]
 
 [connection signal="body_entered" from="InsideDetect" to="." method="_on_inside_detect_body_entered"]
+[connection signal="body_exited" from="InsideDetect" to="." method="_on_inside_detect_body_exited"]
 [connection signal="mouse_entered" from="magnifying" to="magnifying" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="magnifying" to="magnifying" method="_on_mouse_exited"]
 [connection signal="body_entered" from="Bus Leave" to="." method="_on_bus_leave_body_entered"]
