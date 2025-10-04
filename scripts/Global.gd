@@ -13,17 +13,18 @@ signal magnifier_pick_up
 signal umbrella_pick_up
 signal bus_left
 
-var indoor_scene : Node
 var busstop_scene := preload("res://scenes/busstop.tscn").instantiate()
 var credits_scene := preload("res://scenes/credits.tscn").instantiate()
+var indoor_scene := preload("res://scenes/game.tscn").instantiate()
 
 enum SceneName {
+	Start,
 	InDoor,
 	Busstop,
 	Credits,
 }
 
-var current_scene_name := SceneName.InDoor
+var current_scene_name := SceneName.Start
 
 
 func _input(event: InputEvent) -> void:
@@ -44,7 +45,6 @@ var is_umbrella_pick_up := false:
 
 func _ready():
 	current_scene = get_tree().current_scene
-	indoor_scene = current_scene # indoor scene is the default current scene when start the game
 
 func goto_scene(scene_name: SceneName):
 	#current_scene.free()

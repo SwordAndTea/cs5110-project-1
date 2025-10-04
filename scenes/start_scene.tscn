@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6o2jifspybxk"]
+[gd_scene load_steps=11 format=3 uid="uid://b6o2jifspybxk"]
 
-[ext_resource type="Texture2D" uid="uid://cbtj75nkwxmks" path="res://sprites/playerwalk1.png" id="1_cokmr"]
+[ext_resource type="Texture2D" uid="uid://c1dudydui8ll1" path="res://ui/start_button_3D.png" id="1_3tgnh"]
+[ext_resource type="Script" uid="uid://cuiv74pt885sp" path="res://scripts/start_scene.gd" id="1_u7rsi"]
+[ext_resource type="Texture2D" uid="uid://b0as0v1oa04x" path="res://sprites/rain.png" id="2_sg87u"]
+[ext_resource type="Texture2D" uid="uid://ddbydbxn7nhof" path="res://ui/start_button_2D.png" id="2_u7rsi"]
+[ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="4_i331m"]
+[ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="6_2l3yw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2525w"]
+atlas = ExtResource("2_sg87u")
+region = Rect2(0, 0, 3508, 2480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vkx6"]
+atlas = ExtResource("2_sg87u")
+region = Rect2(3508, 0, 3508, 2480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6lbi"]
+atlas = ExtResource("2_sg87u")
+region = Rect2(7016, 0, 3508, 2480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3dgwj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2525w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vkx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6lbi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="StartScene" type="Control"]
 layout_mode = 3
@@ -9,15 +43,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u7rsi")
+
+[node name="TextureRect" type="AnimatedSprite2D" parent="."]
+position = Vector2(575.99994, 324)
+scale = Vector2(0.32839224, 0.26129034)
+sprite_frames = SubResource("SpriteFrames_3dgwj")
+autoplay = "default"
 
 [node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -217.0
+offset_top = -314.0
+offset_right = 264.53418
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("1_3tgnh")
+texture_pressed = ExtResource("2_u7rsi")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(22.00003, 0.9999924)
-scale = Vector2(1.5520834, 1.2900002)
-texture = ExtResource("1_cokmr")
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.75
+offset_top = -59.5
+offset_right = 367.75
+offset_bottom = 59.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("6_2l3yw")
+theme_override_font_sizes/normal_font_size = 96
+text = "After Rain"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("4_i331m")]
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
