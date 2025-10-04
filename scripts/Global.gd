@@ -13,19 +13,20 @@ var cutscene_done = false
 signal magnifier_pick_up
 signal umbrella_pick_up
 
-var indoor_scene : Node
 var busstop_scene := preload("res://scenes/busstop.tscn").instantiate()
 var credits_scene := preload("res://scenes/credits.tscn").instantiate()
 var cutscene := preload("res://scenes/cutscene.tscn").instantiate()
+var indoor_scene := preload("res://scenes/game.tscn").instantiate()
 
 enum SceneName {
+	Start,
 	InDoor,
 	Busstop,
 	Credits,
 	Cutscene,
 }
 
-var current_scene_name := SceneName.InDoor
+var current_scene_name := SceneName.Start
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("focus") and is_magnifier_pick_up:
@@ -47,6 +48,7 @@ func _ready():
 	current_scene = get_tree().current_scene
 	indoor_scene = current_scene # indoor scene is the default current scene when start the game
 	
+
 func goto_scene(scene_name: SceneName):
 	#current_scene.free()
 	#var s = ResourceLoader.load(path)
