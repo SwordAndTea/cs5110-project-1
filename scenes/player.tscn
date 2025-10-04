@@ -45,12 +45,12 @@ animations = [{
 radius = 92.0
 height = 450.0
 
-[sub_resource type="Gradient" id="Gradient_g2els"]
-offsets = PackedFloat32Array(0, 0.11333334, 0.62666667)
-colors = PackedColorArray(1, 1, 1, 1, 0.7183099, 0.7183099, 0.7183099, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_dqkch"]
+offsets = PackedFloat32Array(0, 0.23684211, 0.62666667)
+colors = PackedColorArray(1, 1, 1, 1, 0.68505037, 0.68505037, 0.68505037, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
-gradient = SubResource("Gradient_g2els")
+gradient = SubResource("Gradient_dqkch")
 width = 1025
 height = 1009
 fill = 1

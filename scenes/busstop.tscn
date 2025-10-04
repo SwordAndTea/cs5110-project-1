@@ -1,25 +1,26 @@
-[gd_scene load_steps=41 format=3 uid="uid://bmgfabx2nd453"]
+[gd_scene load_steps=40 format=3 uid="uid://bmgfabx2nd453"]
 
 [ext_resource type="Script" uid="uid://cdghhlwd28ukr" path="res://scenes/busstop.gd" id="1_eru8g"]
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_hr2fb"]
 [ext_resource type="PackedScene" uid="uid://qwkk3jryklca" path="res://scenes/fade_in_sun.tscn" id="2_c4wk2"]
 [ext_resource type="Texture2D" uid="uid://bjo2dkt8vylyj" path="res://sprites/bus stop.png" id="2_xjad6"]
 [ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="3_eru8g"]
-[ext_resource type="Texture2D" uid="uid://de4fqackxfkcy" path="res://sprites/bus sprite.png" id="5_6rqqc"]
-[ext_resource type="AudioStream" uid="uid://03f5e32jp8ui" path="res://Music/bus starting.mp3" id="5_fl7oo"]
 [ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="6_4jjng"]
 [ext_resource type="AudioStream" uid="uid://d22vy5qo5lt2o" path="res://Music/calming-rain-257596.mp3" id="7_jhu8c"]
 [ext_resource type="Script" uid="uid://bsdc6xfm3cglh" path="res://scripts/canvas_layer.gd" id="8_7q8y5"]
 [ext_resource type="AudioStream" uid="uid://dptsngylj68ji" path="res://Music/melancholic-tranquility-364766.mp3" id="8_p876l"]
 [ext_resource type="AudioStream" uid="uid://bc62vreuikch0" path="res://Music/dry-thunder-364468.mp3" id="9_uk1l0"]
 [ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="9_xrhou"]
-[ext_resource type="Script" uid="uid://bdr40y7vte066" path="res://scenes/magnifying.gd" id="10_uk1l0"]
-[ext_resource type="Texture2D" uid="uid://b1j1b2k83cjxs" path="res://sprites/magnifying glass.png" id="11_vca46"]
 [ext_resource type="Texture2D" uid="uid://b0as0v1oa04x" path="res://sprites/rain.png" id="12_vca46"]
 [ext_resource type="PackedScene" uid="uid://cb1mvlw5mwov2" path="res://scenes/item_status_bar.tscn" id="13_7q8y5"]
 [ext_resource type="PackedScene" uid="uid://b7j53rnva35n1" path="res://scenes/umbrella_status_bar.tscn" id="17_tgyys"]
 [ext_resource type="Texture2D" uid="uid://cqij6sovlfht7" path="res://sprites/bg - Copy.png" id="18_vltqg"]
+[ext_resource type="Shader" uid="uid://cfqty0llnstyd" path="res://shaders/magnifying_effect.gdshader" id="19_0ectm"]
 [ext_resource type="Texture2D" uid="uid://d14ufs6o88df7" path="res://sprites/floor.png" id="19_c4wk2"]
+[ext_resource type="Texture2D" uid="uid://ceigpsw10a4o1" path="res://sprites/mask.png" id="20_jdo7k"]
+[ext_resource type="Texture2D" uid="uid://xv3227dry16r" path="res://sprites/fall4.png" id="21_0ectm"]
+[ext_resource type="Script" uid="uid://mjuk7v8m5e1d" path="res://scenes/end_game_area.gd" id="21_jdo7k"]
+[ext_resource type="Script" uid="uid://bnro6klm0i0pr" path="res://scripts/magnifying_effect.gd" id="21_vwwwb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4jjng"]
 distance = 3.0
@@ -31,81 +32,12 @@ distance = -64.25195
 normal = Vector2(-1, 0)
 distance = 205.5
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0ectm"]
+normal = Vector2(0.9999946, 0.003300312)
+distance = -94.247665
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjad6"]
 size = Vector2(141, 274.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q8y5"]
-size = Vector2(102, 75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl7oo"]
-size = Vector2(190, 600)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vltqg"]
-size = Vector2(308, 538)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tgyys"]
-atlas = ExtResource("5_6rqqc")
-region = Rect2(0, 0, 1443, 1060)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8xaa"]
-atlas = ExtResource("5_6rqqc")
-region = Rect2(1443, 0, 1443, 1060)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vltqg"]
-atlas = ExtResource("5_6rqqc")
-region = Rect2(2886, 0, 1443, 1060)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4wk2"]
-atlas = ExtResource("5_6rqqc")
-region = Rect2(4329, 0, 1443, 1060)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ectm"]
-atlas = ExtResource("5_6rqqc")
-region = Rect2(5772, 0, 1443, 1060)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jdo7k"]
-atlas = ExtResource("5_6rqqc")
-region = Rect2(7215, 0, 1443, 1060)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vwwwb"]
-atlas = ExtResource("5_6rqqc")
-region = Rect2(8658, 0, 1443, 1060)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fa3ud"]
-atlas = ExtResource("5_6rqqc")
-region = Rect2(10101, 0, 1443, 1060)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_v6hpi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tgyys")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c8xaa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vltqg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4wk2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0ectm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jdo7k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vwwwb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fa3ud")
-}],
-"loop": false,
-"name": &"default",
-"speed": 7.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7q8y5"]
 atlas = ExtResource("12_vca46")
@@ -136,6 +68,122 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ectm"]
+size = Vector2(399, 233)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jdo7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_0ectm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_vwwwb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Are you alright...?"]
+}
+
+[sub_resource type="Animation" id="Animation_jdo7k"]
+resource_name = "end_animation"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4.5, 7.5, 9, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/RichTextLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.5, 9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Are you alright...?", "Hard day…? I understand…", "Here, I have something that might help…"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fa3ud"]
+_data = {
+&"RESET": SubResource("Animation_vwwwb"),
+&"end_animation": SubResource("Animation_jdo7k")
+}
+
+[sub_resource type="Animation" id="Animation_vltqg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c8xaa"]
+resource_name = "colorglow"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.99607843, 0.9098039, 0.25882354, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4wk2"]
+_data = {
+&"RESET": SubResource("Animation_vltqg"),
+&"colorglow": SubResource("Animation_c8xaa")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fa3ud"]
+shader = ExtResource("19_0ectm")
+shader_parameter/magnification = 4.000000142499999
+
 [node name="bus stop" type="Node2D"]
 position = Vector2(-3348, -584)
 script = ExtResource("1_eru8g")
@@ -154,7 +202,7 @@ position = Vector2(4310, -344)
 
 [node name="player" parent="." instance=ExtResource("1_hr2fb")]
 z_index = 2
-position = Vector2(-915, 121)
+position = Vector2(75, 121)
 collision_mask = 2
 max_zoom = 9.0
 
@@ -176,6 +224,10 @@ shape = SubResource("WorldBoundaryShape2D_l05rq")
 position = Vector2(578.25, -45.75)
 shape = SubResource("WorldBoundaryShape2D_324qj")
 
+[node name="endbound" type="CollisionShape2D" parent="boundaries"]
+rotation = 0.00015999831
+shape = SubResource("WorldBoundaryShape2D_0ectm")
+
 [node name="InsideDetect" type="Area2D" parent="."]
 position = Vector2(-240, -2)
 scale = Vector2(4, 4)
@@ -183,49 +235,6 @@ scale = Vector2(4, 4)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsideDetect"]
 position = Vector2(-244.5, -74.75)
 shape = SubResource("RectangleShape2D_xjad6")
-
-[node name="magnifying" type="Area2D" parent="."]
-position = Vector2(781, 42)
-script = ExtResource("10_uk1l0")
-message_text = "…Maybe this could help…?
-"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="magnifying"]
-position = Vector2(-371, 61)
-shape = SubResource("RectangleShape2D_7q8y5")
-
-[node name="Sprite2D" type="TextureRect" parent="magnifying/CollisionShape2D"]
-offset_left = -36.0
-offset_top = -44.5
-offset_right = 57.0
-offset_bottom = 31.5
-rotation = 0.22786745
-texture = ExtResource("11_vca46")
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="magnifying"]
-position = Vector2(127, 48.5)
-shape = SubResource("RectangleShape2D_7q8y5")
-
-[node name="Bus Leave" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bus Leave"]
-position = Vector2(228, -150)
-shape = SubResource("RectangleShape2D_fl7oo")
-
-[node name="Bus Leaving" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1067, -214)
-stream = ExtResource("5_fl7oo")
-
-[node name="End Game" type="Area2D" parent="."]
-position = Vector2(3535, -31)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="End Game"]
-z_index = 1
-position = Vector2(144, -67)
-shape = SubResource("RectangleShape2D_vltqg")
-
-[node name="Area2D" type="Area2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(1.135, 1.135)
@@ -252,9 +261,16 @@ metadata/_edit_use_anchors_ = true
 wait_time = 3.0
 one_shot = true
 
-[node name="Bus2" type="AnimatedSprite2D" parent="."]
-position = Vector2(1259, -282)
-sprite_frames = SubResource("SpriteFrames_v6hpi")
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+z_index = 3
+offset_top = 7.929515
+offset_right = 1014.97797
+offset_bottom = 91.62995
+theme_override_fonts/normal_font = ExtResource("9_xrhou")
+theme_override_font_sizes/normal_font_size = 33
+text = "Are you alright...?"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="Background" type="Node" parent="."]
 
@@ -307,7 +323,10 @@ color = Color(0.50534403, 0.5053441, 0.50534385, 1)
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("6_4jjng")]
 z_index = 3
-position = Vector2(595, 82)
+position = Vector2(714, 177)
+
+[node name="ColorRect" parent="SceneTransitionAnimation" index="0"]
+z_index = 3
 
 [node name="rain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_jhu8c")
@@ -330,11 +349,45 @@ parameters/looping = false
 
 [node name="UmbrellaStatusBar" parent="." instance=ExtResource("17_tgyys")]
 
+[node name="End Game Area" type="Area2D" parent="."]
+script = ExtResource("21_jdo7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End Game Area"]
+z_index = 1
+position = Vector2(3319.5, 65.5)
+shape = SubResource("RectangleShape2D_0ectm")
+
+[node name="Stranger3" type="AnimatedSprite2D" parent="End Game Area/CollisionShape2D"]
+z_index = 1
+position = Vector2(19.5, 26.5)
+rotation = -1.4364059
+sprite_frames = SubResource("SpriteFrames_jdo7k")
+flip_h = true
+
+[node name="endgame" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fa3ud")
+}
+
+[node name="end color" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c4wk2")
+}
+
+[node name="MagnifyingEffect" type="Sprite2D" parent="."]
+visible = false
+z_index = 100
+material = SubResource("ShaderMaterial_fa3ud")
+position = Vector2(-2517.5, -825.5)
+scale = Vector2(0.4033203, 0.4033203)
+texture = ExtResource("20_jdo7k")
+script = ExtResource("21_vwwwb")
+
 [connection signal="body_entered" from="InsideDetect" to="." method="_on_inside_detect_body_entered"]
 [connection signal="body_exited" from="InsideDetect" to="." method="_on_inside_detect_body_exited"]
-[connection signal="mouse_entered" from="magnifying" to="magnifying" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="magnifying" to="magnifying" method="_on_mouse_exited"]
-[connection signal="body_entered" from="Bus Leave" to="." method="_on_bus_leave_body_entered"]
-[connection signal="body_entered" from="End Game" to="." method="_on_end_game_body_entered"]
+[connection signal="mouse_entered" from="End Game Area" to="End Game Area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="End Game Area" to="End Game Area" method="_on_mouse_exited"]
 
 [editable path="fade in sun"]
+[editable path="player"]
+[editable path="SceneTransitionAnimation"]

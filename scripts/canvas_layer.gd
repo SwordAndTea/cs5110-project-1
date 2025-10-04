@@ -10,6 +10,6 @@ func _update_text(string : String):
 	label.text = string
 	timer.start()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if timer.is_stopped():
 		label.text = ""

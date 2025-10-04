@@ -18,6 +18,7 @@ func _on_mouse_exited() -> void:
 func _ready():
 	if Global.alarm == false:
 		alarm_clock.play("run")
+		ringring.play()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and hovering_object:

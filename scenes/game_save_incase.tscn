@@ -1,74 +1,67 @@
-[gd_scene load_steps=131 format=3 uid="uid://7cgsasybcd18"]
+[gd_scene load_steps=122 format=3 uid="uid://2lrpou3hnf8i"]
 
-[ext_resource type="Script" uid="uid://yxcxguixvey" path="res://scenes/game.gd" id="1_5newe"]
-[ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://bidu5e4ynknqs" path="res://sprites/window colored.png" id="4_458eo"]
-[ext_resource type="Texture2D" uid="uid://7r740j5i7in5" path="res://sprites/fridge color.png" id="7_pr1ej"]
-[ext_resource type="Script" uid="uid://ni4g0tkl7njy" path="res://scenes/area_2d.gd" id="8_e1j6l"]
-[ext_resource type="Script" uid="uid://cxitp8j7cupf3" path="res://scenes/fridge.gd" id="9_sww3w"]
-[ext_resource type="Texture2D" uid="uid://88c23yx0mqg7" path="res://sprites/Fridge Sprite.png" id="10_qnb83"]
-[ext_resource type="Script" uid="uid://bsdc6xfm3cglh" path="res://scripts/canvas_layer.gd" id="10_vtaks"]
-[ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="11_kvpfn"]
-[ext_resource type="Script" uid="uid://b3gtaghnuy2cn" path="res://scenes/journal_area.gd" id="11_suyxu"]
-[ext_resource type="AudioStream" uid="uid://5unghyvweeq5" path="res://Music/fridge-open-and-close-100149.mp3" id="11_sww3w"]
-[ext_resource type="Texture2D" uid="uid://5bavhvbvmvsn" path="res://sprites/Window.PNG" id="12_ir15t"]
-[ext_resource type="Script" uid="uid://cis3o2721306s" path="res://scenes/plant_area.gd" id="12_pl11u"]
-[ext_resource type="Texture2D" uid="uid://b5jhyri2f8yeb" path="res://sprites/IMG_4333.PNG" id="13_ir15t"]
-[ext_resource type="Script" uid="uid://cox5mysd3py5f" path="res://scenes/umbrella_area.gd" id="13_sgl2t"]
-[ext_resource type="Texture2D" uid="uid://diu7gqtk2tda4" path="res://sprites/Journal and Phone.PNG" id="13_ssvqc"]
-[ext_resource type="Texture2D" uid="uid://dutw2nb5jm4dn" path="res://sprites/umbrella stand.PNG" id="14_1kice"]
-[ext_resource type="Script" uid="uid://c1r02q2c6ke1s" path="res://scenes/kitty_area.gd" id="14_bhx41"]
-[ext_resource type="Texture2D" uid="uid://bic3jxhxaqdbp" path="res://sprites/IMG_4334.png" id="14_ca42v"]
-[ext_resource type="Texture2D" uid="uid://dotrue50idrle" path="res://sprites/Plant2.png" id="15_66xif"]
-[ext_resource type="Script" uid="uid://ccfojtkkfghpn" path="res://scenes/alarm_area.gd" id="15_e1j6l"]
-[ext_resource type="Texture2D" uid="uid://tgvxldxa8qqq" path="res://sprites/kitty.png" id="15_pl11u"]
-[ext_resource type="Texture2D" uid="uid://c0f42bmm6xqtu" path="res://sprites/Alarm clock.png" id="16_37s47"]
-[ext_resource type="Texture2D" uid="uid://chensgob5kiq" path="res://sprites/zoom in 1.PNG" id="16_264po"]
-[ext_resource type="Texture2D" uid="uid://b8wosagsva7qp" path="res://sprites/Plant.PNG" id="16_bnuda"]
-[ext_resource type="Script" uid="uid://depoik3m5d8fq" path="res://scenes/toaster_area.gd" id="16_qnb83"]
-[ext_resource type="Texture2D" uid="uid://buybs6jba3h4w" path="res://sprites/catcolor.png" id="18_0rmfi"]
-[ext_resource type="Texture2D" uid="uid://b1t77j5xv8lmx" path="res://sprites/Toaster sprite.png" id="18_02fa5"]
-[ext_resource type="AudioStream" uid="uid://b0jkiubl0emo5" path="res://Music/cat-meow-8-fx-306184.mp3" id="18_fedci"]
-[ext_resource type="AudioStream" uid="uid://ro33rwkjirv4" path="res://Music/toaster-46712.mp3" id="18_nepv3"]
-[ext_resource type="Texture2D" uid="uid://n0sr7dsclp51" path="res://sprites/toaster0.png" id="22_uxocx"]
-[ext_resource type="Texture2D" uid="uid://6d1rp43fsgkg" path="res://sprites/toaster1.png" id="23_7nv0b"]
-[ext_resource type="AudioStream" uid="uid://clysrjirbt22m" path="res://Music/ticking-and-ringing-of-an-old-spring-alarm-clock-sound-effect-338285-[AudioTrimmer.com].mp3" id="23_458eo"]
-[ext_resource type="Script" uid="uid://co0j56isvbf4w" path="res://scenes/fridge_find.gd" id="23_m4url"]
-[ext_resource type="Script" uid="uid://dkhhghrpcm1dp" path="res://scenes/zoom_in_1.gd" id="23_suyxu"]
-[ext_resource type="Texture2D" uid="uid://ln3d2ears1ru" path="res://sprites/toaster2.png" id="24_o8oq8"]
-[ext_resource type="Script" uid="uid://d16b317pst58j" path="res://scenes/fridge_pulse.gd" id="25_n8ral"]
-[ext_resource type="Script" uid="uid://j03lyvt4f460" path="res://scenes/window_find_2.gd" id="25_oaba0"]
-[ext_resource type="Texture2D" uid="uid://bf7fthdroao8" path="res://sprites/toaster3.png" id="25_sxt1d"]
-[ext_resource type="Texture2D" uid="uid://dhr2clvdr6qvt" path="res://sprites/toaster4.png" id="26_2iuns"]
-[ext_resource type="Script" uid="uid://6sxtv2al6jhj" path="res://scenes/plant pulse.gd" id="26_yd4ix"]
-[ext_resource type="Texture2D" uid="uid://oeamp63fck4g" path="res://sprites/toaster5.png" id="27_7gkqi"]
-[ext_resource type="Script" uid="uid://bujei6imcg4ri" path="res://scenes/kitty_find.gd" id="27_rm0al"]
-[ext_resource type="Texture2D" uid="uid://cox6no011tpwo" path="res://sprites/zoom in 2a.png" id="28_8ool0"]
-[ext_resource type="Texture2D" uid="uid://cv36okyqfx5vk" path="res://sprites/toaster6.png" id="28_753oq"]
-[ext_resource type="Script" uid="uid://cry664irecj8m" path="res://scenes/window_pulse.gd" id="28_bnuda"]
-[ext_resource type="Texture2D" uid="uid://bw1yh36mrecst" path="res://sprites/windowrain.png" id="28_gxtfn"]
-[ext_resource type="Script" uid="uid://nhf0qxxpoa4" path="res://scenes/plant_find.gd" id="29_bk1p3"]
-[ext_resource type="Texture2D" uid="uid://da70siskvswii" path="res://sprites/zoom in 0a.png" id="29_h3rex"]
-[ext_resource type="Texture2D" uid="uid://b5s7poi3byivr" path="res://sprites/IMG_4332.PNG" id="29_nepv3"]
-[ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="30_sgl2t"]
-[ext_resource type="Script" uid="uid://bjspf1d8r2gkm" path="res://scenes/kitty_pulse.gd" id="30_xbak0"]
-[ext_resource type="Texture2D" uid="uid://bx00mqj4rywwe" path="res://sprites/zoom in 3.png" id="31_458eo"]
-[ext_resource type="PackedScene" uid="uid://cb1mvlw5mwov2" path="res://scenes/item_status_bar.tscn" id="31_qouja"]
-[ext_resource type="Script" uid="uid://d1y4s4v8d2mld" path="res://scenes/zoom_in_0.gd" id="32_3hbvx"]
-[ext_resource type="Shader" uid="uid://cfqty0llnstyd" path="res://shaders/magnifying_effect.gdshader" id="32_v2yb1"]
-[ext_resource type="Texture2D" uid="uid://ceigpsw10a4o1" path="res://sprites/mask.png" id="33_js0lu"]
-[ext_resource type="Script" uid="uid://bnro6klm0i0pr" path="res://scripts/magnifying_effect.gd" id="34_js0lu"]
-[ext_resource type="Texture2D" uid="uid://6i3tbsew68ov" path="res://sprites/zoom in 4.png" id="36_i4re6"]
-[ext_resource type="Script" uid="uid://cs1gbim1mpick" path="res://scenes/zoom_in_2.gd" id="36_q8j3a"]
-[ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="36_twgab"]
-[ext_resource type="Script" uid="uid://ch3utioq4oxj2" path="res://scenes/toaster_find.gd" id="38_3x338"]
-[ext_resource type="Texture2D" uid="uid://qxem08wnlojk" path="res://sprites/zoom in 5.png" id="38_7ixpq"]
-[ext_resource type="Script" uid="uid://b4dvohyj35see" path="res://scenes/umbrella.gd" id="38_ms3bu"]
-[ext_resource type="AudioStream" uid="uid://38w4yx4fgsk5" path="res://Music/magic-244951.mp3" id="40_05nbr"]
-[ext_resource type="Script" uid="uid://defeib8k85bql" path="res://scenes/zoom_in_4.gd" id="40_7ixpq"]
-[ext_resource type="PackedScene" uid="uid://b7j53rnva35n1" path="res://scenes/umbrella_status_bar.tscn" id="41_q8j3a"]
-[ext_resource type="Script" uid="uid://dpwbg0ek53sg6" path="res://scenes/umbrella_status_bar.gd" id="42_ms3bu"]
-[ext_resource type="AudioStream" uid="uid://bslll3p7uhr4x" path="res://Music/shine-9-268911.mp3" id="59_bnuda"]
+[ext_resource type="Script" uid="uid://yxcxguixvey" path="res://scenes/game.gd" id="1_8lj1v"]
+[ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="2_ycuyh"]
+[ext_resource type="Script" uid="uid://ni4g0tkl7njy" path="res://scenes/area_2d.gd" id="3_s5uoa"]
+[ext_resource type="Texture2D" uid="uid://bidu5e4ynknqs" path="res://sprites/window colored.png" id="4_db35b"]
+[ext_resource type="Texture2D" uid="uid://5bavhvbvmvsn" path="res://sprites/Window.PNG" id="5_qo7p3"]
+[ext_resource type="Script" uid="uid://cxitp8j7cupf3" path="res://scenes/fridge.gd" id="6_ktyp2"]
+[ext_resource type="Texture2D" uid="uid://88c23yx0mqg7" path="res://sprites/Fridge Sprite.png" id="7_dvpxf"]
+[ext_resource type="Texture2D" uid="uid://7r740j5i7in5" path="res://sprites/fridge color.png" id="8_p35d8"]
+[ext_resource type="AudioStream" uid="uid://5unghyvweeq5" path="res://Music/fridge-open-and-close-100149.mp3" id="9_qvaty"]
+[ext_resource type="Script" uid="uid://b3gtaghnuy2cn" path="res://scenes/journal_area.gd" id="10_k70wp"]
+[ext_resource type="Texture2D" uid="uid://diu7gqtk2tda4" path="res://sprites/Journal and Phone.PNG" id="11_3tgkm"]
+[ext_resource type="Script" uid="uid://cox5mysd3py5f" path="res://scenes/umbrella_area.gd" id="12_jgr4x"]
+[ext_resource type="Texture2D" uid="uid://dutw2nb5jm4dn" path="res://sprites/umbrella stand.PNG" id="13_5oeuj"]
+[ext_resource type="Script" uid="uid://cis3o2721306s" path="res://scenes/plant_area.gd" id="14_rxcoj"]
+[ext_resource type="Texture2D" uid="uid://dotrue50idrle" path="res://sprites/Plant2.png" id="15_8wj7y"]
+[ext_resource type="Texture2D" uid="uid://b8wosagsva7qp" path="res://sprites/Plant.PNG" id="16_5vdqu"]
+[ext_resource type="Script" uid="uid://c1r02q2c6ke1s" path="res://scenes/kitty_area.gd" id="17_2pmnq"]
+[ext_resource type="Texture2D" uid="uid://buybs6jba3h4w" path="res://sprites/catcolor.png" id="18_732d6"]
+[ext_resource type="Texture2D" uid="uid://tgvxldxa8qqq" path="res://sprites/kitty.png" id="19_voouq"]
+[ext_resource type="AudioStream" uid="uid://b0jkiubl0emo5" path="res://Music/cat-meow-8-fx-306184.mp3" id="20_vgmvl"]
+[ext_resource type="Script" uid="uid://depoik3m5d8fq" path="res://scenes/toaster_area.gd" id="21_xiadm"]
+[ext_resource type="Texture2D" uid="uid://b1t77j5xv8lmx" path="res://sprites/Toaster sprite.png" id="22_c1ggc"]
+[ext_resource type="AudioStream" uid="uid://ro33rwkjirv4" path="res://Music/toaster-46712.mp3" id="23_8r0yd"]
+[ext_resource type="Script" uid="uid://ccfojtkkfghpn" path="res://scenes/alarm_area.gd" id="24_phnaj"]
+[ext_resource type="Texture2D" uid="uid://c0f42bmm6xqtu" path="res://sprites/Alarm clock.png" id="25_hmnnr"]
+[ext_resource type="AudioStream" uid="uid://clysrjirbt22m" path="res://Music/ticking-and-ringing-of-an-old-spring-alarm-clock-sound-effect-338285-[AudioTrimmer.com].mp3" id="26_e8rxl"]
+[ext_resource type="Script" uid="uid://d16b317pst58j" path="res://scenes/fridge_pulse.gd" id="27_dlm46"]
+[ext_resource type="Script" uid="uid://6sxtv2al6jhj" path="res://scenes/plant pulse.gd" id="28_q4ujl"]
+[ext_resource type="Script" uid="uid://cry664irecj8m" path="res://scenes/window_pulse.gd" id="29_qdg0k"]
+[ext_resource type="Script" uid="uid://bjspf1d8r2gkm" path="res://scenes/kitty_pulse.gd" id="30_1lxj8"]
+[ext_resource type="Texture2D" uid="uid://d2e06j4isqdkx" path="res://sprites/sparkle.png" id="31_lk5fo"]
+[ext_resource type="Script" uid="uid://co0j56isvbf4w" path="res://scenes/fridge_find.gd" id="32_p7oo2"]
+[ext_resource type="Script" uid="uid://bujei6imcg4ri" path="res://scenes/kitty_find.gd" id="33_v6vr1"]
+[ext_resource type="Script" uid="uid://j03lyvt4f460" path="res://scenes/window_find_2.gd" id="34_w3a8q"]
+[ext_resource type="Script" uid="uid://nhf0qxxpoa4" path="res://scenes/plant_find.gd" id="35_frwud"]
+[ext_resource type="Script" uid="uid://bsdc6xfm3cglh" path="res://scripts/canvas_layer.gd" id="36_wxoid"]
+[ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="37_nhodh"]
+[ext_resource type="Texture2D" uid="uid://da70siskvswii" path="res://sprites/zoom in 0a.png" id="38_odmur"]
+[ext_resource type="Script" uid="uid://d1y4s4v8d2mld" path="res://scenes/zoom_in_0.gd" id="39_j0nsr"]
+[ext_resource type="Texture2D" uid="uid://chensgob5kiq" path="res://sprites/zoom in 1.PNG" id="40_mbf7b"]
+[ext_resource type="Script" uid="uid://dkhhghrpcm1dp" path="res://scenes/zoom_in_1.gd" id="41_cddo5"]
+[ext_resource type="Texture2D" uid="uid://cox6no011tpwo" path="res://sprites/zoom in 2a.png" id="42_lk0nb"]
+[ext_resource type="Script" uid="uid://cs1gbim1mpick" path="res://scenes/zoom_in_2.gd" id="43_h86qv"]
+[ext_resource type="Texture2D" uid="uid://bx00mqj4rywwe" path="res://sprites/zoom in 3.png" id="44_ya2a6"]
+[ext_resource type="Texture2D" uid="uid://qxem08wnlojk" path="res://sprites/zoom in 5.png" id="45_om5hs"]
+[ext_resource type="Script" uid="uid://b4dvohyj35see" path="res://scenes/umbrella.gd" id="46_qdkl7"]
+[ext_resource type="Texture2D" uid="uid://6i3tbsew68ov" path="res://sprites/zoom in 4.png" id="47_ib3ub"]
+[ext_resource type="Script" uid="uid://defeib8k85bql" path="res://scenes/zoom_in_4.gd" id="48_5eu1v"]
+[ext_resource type="PackedScene" uid="uid://b7j53rnva35n1" path="res://scenes/umbrella_status_bar.tscn" id="49_k6r3f"]
+[ext_resource type="Script" uid="uid://dpwbg0ek53sg6" path="res://scenes/umbrella_status_bar.gd" id="50_2wcrs"]
+[ext_resource type="PackedScene" uid="uid://cb1mvlw5mwov2" path="res://scenes/item_status_bar.tscn" id="51_3k03k"]
+[ext_resource type="Shader" uid="uid://cfqty0llnstyd" path="res://shaders/magnifying_effect.gdshader" id="52_f1hbw"]
+[ext_resource type="Texture2D" uid="uid://ceigpsw10a4o1" path="res://sprites/mask.png" id="53_1kbbd"]
+[ext_resource type="Script" uid="uid://bnro6klm0i0pr" path="res://scripts/magnifying_effect.gd" id="54_34rx3"]
+[ext_resource type="Texture2D" uid="uid://b5s7poi3byivr" path="res://sprites/IMG_4332.PNG" id="55_y6he8"]
+[ext_resource type="Texture2D" uid="uid://b5jhyri2f8yeb" path="res://sprites/IMG_4333.PNG" id="56_at7wm"]
+[ext_resource type="Texture2D" uid="uid://bic3jxhxaqdbp" path="res://sprites/IMG_4334.png" id="57_m6bh7"]
+[ext_resource type="AudioStream" uid="uid://38w4yx4fgsk5" path="res://Music/magic-244951.mp3" id="58_vd4g6"]
+[ext_resource type="AudioStream" uid="uid://bslll3p7uhr4x" path="res://Music/shine-9-268911.mp3" id="59_fybif"]
+[ext_resource type="Texture2D" uid="uid://bw1yh36mrecst" path="res://sprites/windowrain.png" id="60_xwbdk"]
+[ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="61_nyxlr"]
+[ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="62_q54pb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 distance = 3.0
@@ -86,14 +79,14 @@ size = Vector2(328, 860)
 size = Vector2(435, 260)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qswn"]
-atlas = ExtResource("12_ir15t")
+atlas = ExtResource("5_qo7p3")
 region = Rect2(0, 0, 474, 321)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rm0al"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_458eo")
+"texture": ExtResource("4_db35b")
 }],
 "loop": false,
 "name": &"color",
@@ -113,19 +106,19 @@ radius = 135.5
 height = 564.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7025r"]
-atlas = ExtResource("10_qnb83")
+atlas = ExtResource("7_dvpxf")
 region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4url"]
-atlas = ExtResource("10_qnb83")
+atlas = ExtResource("7_dvpxf")
 region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ool0"]
-atlas = ExtResource("10_qnb83")
+atlas = ExtResource("7_dvpxf")
 region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fedci"]
-atlas = ExtResource("7_pr1ej")
+atlas = ExtResource("8_p35d8")
 region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pl11u"]
@@ -172,7 +165,7 @@ size = Vector2(170.25, 136)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("15_66xif")
+"texture": ExtResource("15_8wj7y")
 }],
 "loop": true,
 "name": &"color",
@@ -180,7 +173,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_bnuda")
+"texture": ExtResource("16_5vdqu")
 }],
 "loop": false,
 "name": &"default",
@@ -191,14 +184,14 @@ animations = [{
 size = Vector2(123, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xbak0"]
-atlas = ExtResource("15_pl11u")
+atlas = ExtResource("19_voouq")
 region = Rect2(0, 0, 131, 49)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3x28f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_0rmfi")
+"texture": ExtResource("18_732d6")
 }],
 "loop": false,
 "name": &"color",
@@ -217,57 +210,31 @@ animations = [{
 size = Vector2(132.5, 91)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pr1ej"]
-atlas = ExtResource("18_02fa5")
+atlas = ExtResource("22_c1ggc")
 region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_05nbr"]
-atlas = ExtResource("18_02fa5")
+atlas = ExtResource("22_c1ggc")
 region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sl42"]
-atlas = ExtResource("18_02fa5")
+atlas = ExtResource("22_c1ggc")
 region = Rect2(4096, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oaba0"]
-atlas = ExtResource("18_02fa5")
+atlas = ExtResource("22_c1ggc")
 region = Rect2(6144, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_458eo"]
-atlas = ExtResource("18_02fa5")
+atlas = ExtResource("22_c1ggc")
 region = Rect2(8192, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3rex"]
-atlas = ExtResource("18_02fa5")
+atlas = ExtResource("22_c1ggc")
 region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_458eo"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_uxocx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_7nv0b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_o8oq8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_sxt1d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_2iuns")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_7gkqi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_753oq")
-}],
-"loop": false,
-"name": &"goodtoast",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pr1ej")
@@ -301,15 +268,15 @@ animations = [{
 size = Vector2(89.25, 105.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgl2t"]
-atlas = ExtResource("16_37s47")
+atlas = ExtResource("25_hmnnr")
 region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qouja"]
-atlas = ExtResource("16_37s47")
+atlas = ExtResource("25_hmnnr")
 region = Rect2(0, 0, 2048, 2048)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wljb1"]
-atlas = ExtResource("16_37s47")
+atlas = ExtResource("25_hmnnr")
 region = Rect2(2048, 0, 2048, 2048)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v2yb1"]
@@ -397,12 +364,6 @@ height = 120
 fill = 1
 fill_from = Vector2(0.5, 0.4861111)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yg85"]
-size = Vector2(312, 197.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0g06"]
-size = Vector2(153, 92)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ool0"]
 size = Vector2(69, 57)
 
@@ -420,19 +381,19 @@ radius = 244.81973
 height = 842.04846
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxtfn"]
-shader = ExtResource("32_v2yb1")
+shader = ExtResource("52_f1hbw")
 shader_parameter/magnification = 4.000000142499999
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twgab"]
-atlas = ExtResource("28_gxtfn")
+atlas = ExtResource("60_xwbdk")
 region = Rect2(400, 0, 3000, 2480)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02fa5"]
-atlas = ExtResource("28_gxtfn")
+atlas = ExtResource("60_xwbdk")
 region = Rect2(3400, 0, 3000, 2480)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nepv3"]
-atlas = ExtResource("28_gxtfn")
+atlas = ExtResource("60_xwbdk")
 region = Rect2(6400, 0, 3000, 2480)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7025r"]
@@ -453,14 +414,14 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rm0al"]
-atlas = ExtResource("12_ir15t")
+atlas = ExtResource("5_qo7p3")
 region = Rect2(0, 0, 474, 321)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i4re6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_458eo")
+"texture": ExtResource("4_db35b")
 }],
 "loop": true,
 "name": &"color",
@@ -476,9 +437,9 @@ animations = [{
 }]
 
 [node name="game" type="Node2D"]
-script = ExtResource("1_5newe")
+script = ExtResource("1_8lj1v")
 
-[node name="player" parent="." instance=ExtResource("1_uwrxv")]
+[node name="player" parent="." instance=ExtResource("2_ycuyh")]
 z_index = 4
 position = Vector2(-4023, -205)
 collision_mask = 2
@@ -522,7 +483,7 @@ shape = SubResource("RectangleShape2D_sgl2t")
 [node name="Window Area" type="Area2D" parent="Interactive"]
 z_index = 3
 position = Vector2(-3281, -655)
-script = ExtResource("8_e1j6l")
+script = ExtResource("3_s5uoa")
 message_text = "Another dreary day..."
 
 [node name="Window" type="CollisionShape2D" parent="Interactive/Window Area"]
@@ -536,7 +497,7 @@ autoplay = "default"
 metadata/_edit_use_anchors_ = true
 
 [node name="Fridge Area" type="Area2D" parent="Interactive"]
-script = ExtResource("9_sww3w")
+script = ExtResource("6_ktyp2")
 message_text = "Nothing but a half-eaten apple..."
 
 [node name="Fridge" type="CollisionShape2D" parent="Interactive/Fridge Area"]
@@ -551,11 +512,11 @@ animation = &"closed"
 autoplay = "closed"
 
 [node name="Fridge Sound" type="AudioStreamPlayer2D" parent="Interactive/Fridge Area/Fridge/FridgeAnim"]
-stream = ExtResource("11_sww3w")
+stream = ExtResource("9_qvaty")
 volume_db = 17.165
 
 [node name="Journal Area" type="Area2D" parent="Interactive"]
-script = ExtResource("11_suyxu")
+script = ExtResource("10_k70wp")
 message_text = "Forgot to charge my phone... again..."
 
 [node name="Journal" type="CollisionShape2D" parent="Interactive/Journal Area"]
@@ -567,11 +528,11 @@ offset_left = -81.0
 offset_top = -42.0
 offset_right = 83.74414
 offset_bottom = 46.0
-texture = ExtResource("13_ssvqc")
+texture = ExtResource("11_3tgkm")
 metadata/_edit_use_anchors_ = true
 
 [node name="Umbrella Area" type="Area2D" parent="Interactive"]
-script = ExtResource("13_sgl2t")
+script = ExtResource("12_jgr4x")
 message_text = "… Can’t remember where I put my umbrella... "
 
 [node name="Umbrella" type="CollisionShape2D" parent="Interactive/Umbrella Area"]
@@ -583,11 +544,11 @@ offset_left = -60.0
 offset_top = -100.0
 offset_right = 59.0
 offset_bottom = 93.0
-texture = ExtResource("14_1kice")
+texture = ExtResource("13_5oeuj")
 metadata/_edit_use_anchors_ = true
 
 [node name="Plant Area" type="Area2D" parent="Interactive"]
-script = ExtResource("12_pl11u")
+script = ExtResource("14_rxcoj")
 message_text = "… Dead… I keep forgetting to water it…"
 
 [node name="Plant" type="CollisionShape2D" parent="Interactive/Plant Area"]
@@ -601,7 +562,7 @@ animation = &"color"
 autoplay = "default"
 
 [node name="Kitty Area" type="Area2D" parent="Interactive"]
-script = ExtResource("14_bhx41")
+script = ExtResource("17_2pmnq")
 message_text = "Poor Cookie... the storm must've spooked her..."
 
 [node name="Kitty" type="CollisionShape2D" parent="Interactive/Kitty Area"]
@@ -617,11 +578,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="meow" type="AudioStreamPlayer2D" parent="Interactive/Kitty Area/Kitty/Kitty"]
 position = Vector2(56, 25)
-stream = ExtResource("18_fedci")
+stream = ExtResource("20_vgmvl")
 
 [node name="Toaster Area" type="Area2D" parent="Interactive"]
 position = Vector2(-3278, -604)
-script = ExtResource("16_qnb83")
+script = ExtResource("21_xiadm")
 message_text = "Burnt… just my luck…"
 
 [node name="Toaster" type="CollisionShape2D" parent="Interactive/Toaster Area"]
@@ -632,18 +593,16 @@ shape = SubResource("RectangleShape2D_qnb83")
 position = Vector2(1.2500029, 46.5)
 scale = Vector2(0.164917, 0.164917)
 sprite_frames = SubResource("SpriteFrames_458eo")
-animation = &"goodtoast"
-frame = 6
-frame_progress = 1.0
+animation = &"toast"
 
 [node name="toaster sound" type="AudioStreamPlayer2D" parent="Interactive/Toaster Area/Toaster/burnt toast"]
 position = Vector2(6.063629, -266.80072)
 scale = Vector2(6.0636554, 6.0636554)
-stream = ExtResource("18_nepv3")
+stream = ExtResource("23_8r0yd")
 volume_db = 11.884
 
 [node name="Alarm Area" type="Area2D" parent="Interactive"]
-script = ExtResource("15_e1j6l")
+script = ExtResource("24_phnaj")
 
 [node name="Alarm" type="CollisionShape2D" parent="Interactive/Alarm Area"]
 position = Vector2(-3996.625, -367.875)
@@ -658,14 +617,14 @@ animation = &"run"
 autoplay = "clock"
 
 [node name="ringring" type="AudioStreamPlayer2D" parent="Interactive/Alarm Area/Alarm/alarm clock"]
-stream = ExtResource("23_458eo")
+stream = ExtResource("26_e8rxl")
 volume_db = -0.2
 parameters/looping = true
 
 [node name="Pulse Effect" type="Node" parent="."]
 
 [node name="fridge pulse" type="Area2D" parent="Pulse Effect"]
-script = ExtResource("25_n8ral")
+script = ExtResource("27_dlm46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pulse Effect/fridge pulse"]
 position = Vector2(632, -579)
@@ -682,7 +641,7 @@ process_material = SubResource("ParticleProcessMaterial_bnuda")
 
 [node name="plant pulse" type="Area2D" parent="Pulse Effect"]
 position = Vector2(-872, -378)
-script = ExtResource("26_yd4ix")
+script = ExtResource("28_q4ujl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pulse Effect/plant pulse"]
 position = Vector2(-16, -4)
@@ -698,7 +657,7 @@ lifetime = 2.6799999999999997
 process_material = SubResource("ParticleProcessMaterial_bnuda")
 
 [node name="window pulse" type="Area2D" parent="Pulse Effect"]
-script = ExtResource("28_bnuda")
+script = ExtResource("29_qdg0k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pulse Effect/window pulse"]
 position = Vector2(-3277, -646.75)
@@ -715,7 +674,7 @@ process_material = SubResource("ParticleProcessMaterial_bnuda")
 
 [node name="kitty pulse" type="Area2D" parent="Pulse Effect"]
 position = Vector2(-3665, -190)
-script = ExtResource("30_xbak0")
+script = ExtResource("30_1lxj8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pulse Effect/kitty pulse"]
 position = Vector2(41, -33)
@@ -730,34 +689,18 @@ texture = SubResource("GradientTexture2D_l6q63")
 lifetime = 2.6799999999999997
 process_material = SubResource("ParticleProcessMaterial_bnuda")
 
-[node name="toaster pulse" type="Area2D" parent="Pulse Effect"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pulse Effect/toaster pulse"]
-position = Vector2(1316, -471.75)
-shape = SubResource("RectangleShape2D_1yg85")
-
-[node name="toaster find glow" type="GPUParticles2D" parent="Pulse Effect/toaster pulse/CollisionShape2D"]
-z_as_relative = false
-material = SubResource("CanvasItemMaterial_bk1p3")
-position = Vector2(-14, 3.75)
-amount = 1
-texture = SubResource("GradientTexture2D_l6q63")
-lifetime = 2.6799999999999997
-process_material = SubResource("ParticleProcessMaterial_bnuda")
-
 [node name="Findables" type="Node" parent="."]
 
 [node name="toaster find" type="Area2D" parent="Findables"]
-position = Vector2(1248, -512)
-script = ExtResource("38_3x338")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/toaster find"]
-position = Vector2(52.5, 37)
-shape = SubResource("RectangleShape2D_s0g06")
+[node name="toaster find" type="Sprite2D" parent="Findables/toaster find"]
+position = Vector2(1257.0242, -483.70084)
+scale = Vector2(0.31708395, 0.31708395)
+texture = ExtResource("31_lk5fo")
 
 [node name="fridge find" type="Area2D" parent="Findables"]
 position = Vector2(-9, -7)
-script = ExtResource("23_m4url")
+script = ExtResource("32_p7oo2")
 message_text = "Oh... love you, too..."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/fridge find"]
@@ -767,7 +710,7 @@ shape = SubResource("RectangleShape2D_8ool0")
 [node name="kitty find" type="Area2D" parent="Findables"]
 position = Vector2(-3705.0002, -197)
 scale = Vector2(0.21590555, 0.2537879)
-script = ExtResource("27_rm0al")
+script = ExtResource("33_v6vr1")
 message_text = "...What's that behind you, Cookie...?"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/kitty find"]
@@ -778,7 +721,7 @@ shape = SubResource("RectangleShape2D_fedci")
 [node name="window find" type="Area2D" parent="Findables"]
 position = Vector2(-3486, -560)
 scale = Vector2(0.25, 0.25)
-script = ExtResource("25_oaba0")
+script = ExtResource("34_w3a8q")
 message_text = "… Actually, it’s kind of soothing…"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/window find"]
@@ -788,7 +731,7 @@ shape = SubResource("RectangleShape2D_i4re6")
 [node name="plant find" type="Area2D" parent="Findables"]
 position = Vector2(-917, -343)
 scale = Vector2(0.27272728, 0.27272728)
-script = ExtResource("29_bk1p3")
+script = ExtResource("35_frwud")
 message_text = "Look at that… you’re still hanging in there...!"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/plant find"]
@@ -798,7 +741,7 @@ shape = SubResource("RectangleShape2D_66xif")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(1.135, 1.135)
 transform = Transform2D(1.135, 0, 0, 1.135, 0, 0)
-script = ExtResource("10_vtaks")
+script = ExtResource("36_wxoid")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
@@ -810,7 +753,7 @@ offset_left = 1603.2549
 offset_top = 898.13965
 offset_right = 2473.255
 offset_bottom = 1008.1398
-theme_override_fonts/font = ExtResource("11_kvpfn")
+theme_override_fonts/font = ExtResource("37_nhodh")
 theme_override_font_sizes/font_size = 33
 text = "text here..."
 horizontal_alignment = 1
@@ -820,41 +763,41 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
-texture = ExtResource("29_h3rex")
-script = ExtResource("32_3hbvx")
+texture = ExtResource("38_odmur")
+script = ExtResource("39_j0nsr")
 
 [node name="ZoomIn1" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
-texture = ExtResource("16_264po")
-script = ExtResource("23_suyxu")
+texture = ExtResource("40_mbf7b")
+script = ExtResource("41_cddo5")
 
 [node name="ZoomIn2" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
-texture = ExtResource("28_8ool0")
-script = ExtResource("36_q8j3a")
+texture = ExtResource("42_lk0nb")
+script = ExtResource("43_h86qv")
 
 [node name="ZoomIn3" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
-texture = ExtResource("31_458eo")
-script = ExtResource("23_suyxu")
+texture = ExtResource("44_ya2a6")
+script = ExtResource("41_cddo5")
 
 [node name="ZoomIn5" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
-texture = ExtResource("38_7ixpq")
-script = ExtResource("23_suyxu")
+texture = ExtResource("45_om5hs")
+script = ExtResource("41_cddo5")
 
 [node name="Umbrella" type="Area2D" parent="CanvasLayer"]
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
-script = ExtResource("38_ms3bu")
+script = ExtResource("46_qdkl7")
 
 [node name="UmbrellaGet" type="CollisionShape2D" parent="CanvasLayer/Umbrella"]
 position = Vector2(-364.17255, -90.47754)
@@ -866,17 +809,17 @@ shape = SubResource("CapsuleShape2D_rm0al")
 visible = false
 position = Vector2(-81.2724, 366.3369)
 rotation = 1.5455955
-texture = ExtResource("36_i4re6")
-script = ExtResource("40_7ixpq")
+texture = ExtResource("47_ib3ub")
+script = ExtResource("48_5eu1v")
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 wait_time = 3.0
 one_shot = true
 
-[node name="UmbrellaStatusBar" parent="." instance=ExtResource("41_q8j3a")]
-script = ExtResource("42_ms3bu")
+[node name="UmbrellaStatusBar" parent="." instance=ExtResource("49_k6r3f")]
+script = ExtResource("50_2wcrs")
 
-[node name="ItemStatusBar" parent="." instance=ExtResource("31_qouja")]
+[node name="ItemStatusBar" parent="." instance=ExtResource("51_3k03k")]
 
 [node name="MagnifyingEffect" type="Sprite2D" parent="."]
 visible = false
@@ -884,8 +827,8 @@ z_index = 100
 material = SubResource("ShaderMaterial_gxtfn")
 position = Vector2(-2517.5, -825.5)
 scale = Vector2(0.4033203, 0.4033203)
-texture = ExtResource("33_js0lu")
-script = ExtResource("34_js0lu")
+texture = ExtResource("53_1kbbd")
+script = ExtResource("54_34rx3")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-220, 70)
@@ -893,21 +836,21 @@ color = Color(0.3180198, 0.31801978, 0.31801975, 1)
 
 [node name="Kitchen" type="Sprite2D" parent="."]
 position = Vector2(1452, -604)
-texture = ExtResource("29_nepv3")
+texture = ExtResource("55_y6he8")
 
 [node name="Living Room" type="Sprite2D" parent="."]
 position = Vector2(-759, -606)
-texture = ExtResource("13_ir15t")
+texture = ExtResource("56_at7wm")
 
 [node name="Bedroom" type="Sprite2D" parent="."]
 position = Vector2(-2901, -609)
-texture = ExtResource("14_ca42v")
+texture = ExtResource("57_m6bh7")
 
 [node name="magic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("40_05nbr")
+stream = ExtResource("58_vd4g6")
 
 [node name="umbrella get" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("59_bnuda")
+stream = ExtResource("59_fybif")
 
 [node name="Rain" type="AnimatedSprite2D" parent="."]
 z_index = 2
@@ -919,7 +862,7 @@ frame_progress = 0.39533964
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(-3294, -654.75)
 scale = Vector2(0.12423206, 0.23726414)
-texture = ExtResource("36_twgab")
+texture = ExtResource("61_nyxlr")
 
 [node name="Window 2" type="AnimatedSprite2D" parent="."]
 z_index = 2
@@ -932,7 +875,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Bg2" type="Sprite2D" parent="."]
 position = Vector2(-67, -668.75)
 scale = Vector2(0.124232076, 0.23726414)
-texture = ExtResource("36_twgab")
+texture = ExtResource("61_nyxlr")
 
 [node name="Rain2" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -941,10 +884,9 @@ scale = Vector2(0.21133338, 0.16088709)
 sprite_frames = SubResource("SpriteFrames_7025r")
 frame_progress = 0.600637
 
-[node name="SceneTransitionAnimation" parent="." instance=ExtResource("30_sgl2t")]
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("62_q54pb")]
 z_index = 1
 z_as_relative = false
-position = Vector2(139, 8)
 
 [connection signal="body_entered" from="OutsideDetect" to="." method="_on_outside_detect_body_entered"]
 [connection signal="body_exited" from="OutsideDetect" to="." method="_on_outside_detect_body_exited"]
@@ -976,8 +918,6 @@ position = Vector2(139, 8)
 [connection signal="mouse_exited" from="Pulse Effect/window pulse" to="Pulse Effect/window pulse" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pulse Effect/kitty pulse" to="Pulse Effect/kitty pulse" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Pulse Effect/kitty pulse" to="Pulse Effect/kitty pulse" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Findables/toaster find" to="Findables/toaster find" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Findables/toaster find" to="Findables/toaster find" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Findables/fridge find" to="Findables/fridge find" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Findables/fridge find" to="Findables/fridge find" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Findables/kitty find" to="Findables/kitty find" method="_on_mouse_entered"]
