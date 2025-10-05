@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://7cgsasybcd18"]
+[gd_scene load_steps=132 format=3 uid="uid://7cgsasybcd18"]
 
 [ext_resource type="Script" uid="uid://yxcxguixvey" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -63,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="36_twgab"]
 [ext_resource type="Script" uid="uid://ch3utioq4oxj2" path="res://scenes/toaster_find.gd" id="38_3x338"]
 [ext_resource type="Texture2D" uid="uid://qxem08wnlojk" path="res://sprites/zoom in 5.png" id="38_7ixpq"]
+[ext_resource type="Script" uid="uid://dwn6krd1ijncl" path="res://scenes/toaster_pulse.gd" id="38_7nv0b"]
 [ext_resource type="Script" uid="uid://b4dvohyj35see" path="res://scenes/umbrella.gd" id="38_ms3bu"]
 [ext_resource type="AudioStream" uid="uid://38w4yx4fgsk5" path="res://Music/magic-244951.mp3" id="40_05nbr"]
 [ext_resource type="Script" uid="uid://defeib8k85bql" path="res://scenes/zoom_in_4.gd" id="40_7ixpq"]
@@ -480,7 +481,7 @@ script = ExtResource("1_5newe")
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
 z_index = 4
-position = Vector2(-4023, -205)
+position = Vector2(-4023, -189)
 collision_mask = 2
 max_zoom = 9.0
 
@@ -609,9 +610,8 @@ position = Vector2(-3637.5, -211)
 shape = SubResource("RectangleShape2D_suyxu")
 
 [node name="Kitty" type="AnimatedSprite2D" parent="Interactive/Kitty Area/Kitty"]
-position = Vector2(4.5, 14)
+position = Vector2(3.5, 13)
 sprite_frames = SubResource("SpriteFrames_3x28f")
-animation = &"color"
 autoplay = "default"
 metadata/_edit_use_anchors_ = true
 
@@ -632,9 +632,8 @@ shape = SubResource("RectangleShape2D_qnb83")
 position = Vector2(1.2500029, 46.5)
 scale = Vector2(0.164917, 0.164917)
 sprite_frames = SubResource("SpriteFrames_458eo")
-animation = &"goodtoast"
-frame = 6
-frame_progress = 1.0
+animation = &"toaster"
+autoplay = "toaster"
 
 [node name="toaster sound" type="AudioStreamPlayer2D" parent="Interactive/Toaster Area/Toaster/burnt toast"]
 position = Vector2(6.063629, -266.80072)
@@ -731,12 +730,14 @@ lifetime = 2.6799999999999997
 process_material = SubResource("ParticleProcessMaterial_bnuda")
 
 [node name="toaster pulse" type="Area2D" parent="Pulse Effect"]
+script = ExtResource("38_7nv0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pulse Effect/toaster pulse"]
 position = Vector2(1316, -471.75)
 shape = SubResource("RectangleShape2D_1yg85")
 
 [node name="toaster find glow" type="GPUParticles2D" parent="Pulse Effect/toaster pulse/CollisionShape2D"]
+visible = false
 z_as_relative = false
 material = SubResource("CanvasItemMaterial_bk1p3")
 position = Vector2(-14, 3.75)
@@ -942,7 +943,7 @@ sprite_frames = SubResource("SpriteFrames_7025r")
 frame_progress = 0.600637
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("30_sgl2t")]
-z_index = 1
+z_index = 5
 z_as_relative = false
 position = Vector2(139, 8)
 
@@ -976,6 +977,8 @@ position = Vector2(139, 8)
 [connection signal="mouse_exited" from="Pulse Effect/window pulse" to="Pulse Effect/window pulse" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pulse Effect/kitty pulse" to="Pulse Effect/kitty pulse" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Pulse Effect/kitty pulse" to="Pulse Effect/kitty pulse" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Pulse Effect/toaster pulse" to="Pulse Effect/toaster pulse" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Pulse Effect/toaster pulse" to="Pulse Effect/toaster pulse" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Findables/toaster find" to="Findables/toaster find" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Findables/toaster find" to="Findables/toaster find" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Findables/fridge find" to="Findables/fridge find" method="_on_mouse_entered"]

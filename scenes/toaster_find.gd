@@ -3,6 +3,7 @@ extends Area2D
 @onready var burnt_toast: AnimatedSprite2D = $"../../Interactive/Toaster Area/Toaster/burnt toast"
 @onready var magic: AudioStreamPlayer = $"../../magic"
 @onready var toaster_found : bool = false
+@onready var toaster_sound: AudioStreamPlayer2D = $"../../Interactive/Toaster Area/Toaster/burnt toast/toaster sound"
 
 signal toasterfound
 
@@ -31,11 +32,11 @@ func _on_mouse_exited() -> void:
 func _input(event: InputEvent) -> void:
 	if Global.is_magnifier_pick_up and event.is_action_pressed("left_click") and hovering_object and Global.focus_on == true:
 		Global.update_dialog_text.emit(message_text)
+		toaster_sound.play()
 		burnt_toast.play("goodtoast")
-		magic.play()
 		toaster_found=true
 		toasterfound.emit()
 	
 	elif event.is_action_pressed("left_click") and hovering_object and toaster_found==true:
 		Global.update_dialog_text.emit(message_text)
-		magic.play()
+		toaster_sound.play()

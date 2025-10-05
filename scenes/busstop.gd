@@ -17,7 +17,7 @@ func _ready():
 	rain_2.play()
 	#setting this automatically to true since player acquires magnifying glass during cutscene
 	Global.is_magnifier_pick_up = true
-	
+
 	#adding a boundary for the end state so the player can't go back inside
 	if Global.is_umbrella_pick_up== false: 
 		get_node("boundaries/endbound").disabled = true

@@ -46,15 +46,8 @@ var is_umbrella_pick_up := false:
 
 func _ready():
 	current_scene = get_tree().current_scene
-	indoor_scene = current_scene # indoor scene is the default current scene when start the game
 	
-
 func goto_scene(scene_name: SceneName):
-	#current_scene.free()
-	#var s = ResourceLoader.load(path)
-	#current_scene = s.instantiate()
-	#get_tree().root.add_child(current_scene)
-	#get_tree().current_scene = current_scene
 	if current_scene:
 		get_tree().root.remove_child(current_scene)
 	if scene_name == SceneName.InDoor:

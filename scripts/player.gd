@@ -19,7 +19,7 @@ func _ready() -> void:
 	if Global.current_scene_name == Global.SceneName.InDoor:
 		camera_2d.limit_right = 2200
 	elif Global.current_scene_name == Global.SceneName.Busstop:
-		camera_2d.limit_right = 1100
+		camera_2d.limit_right = 300
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_right") and Global.is_umbrella_pick_up==false:

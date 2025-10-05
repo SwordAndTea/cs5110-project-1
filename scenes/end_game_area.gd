@@ -5,6 +5,7 @@ extends Area2D
 @onready var animation_player: AnimationPlayer = $"../SceneTransitionAnimation/AnimationPlayer"
 @onready var endgame: AnimationPlayer = $"../endgame"
 @onready var umbrella: AnimatedSprite2D = $"../player/umbrella"
+@onready var rain_end: AnimationPlayer = $"../rain end"
 
 var pointer = load("res://sprites/pointer.png")
 var clicker = load("res://sprites/Clicker.png")
@@ -26,6 +27,7 @@ func _input(event: InputEvent) -> void:
 		endgame.play("end_animation")
 		player.set_physics_process(false) 
 		umbrella.stop() 
+		rain_end.play()
 		await endgame.animation_finished
 		animation_player.play("slow_fade_out")
 		await animation_player.animation_finished
