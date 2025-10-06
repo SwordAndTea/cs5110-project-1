@@ -110,6 +110,18 @@ tracks/1/keys = {
 "update": 1,
 "values": ["Are you alright...?"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/RichTextLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 7.929515)]
+}
 
 [sub_resource type="Animation" id="Animation_jdo7k"]
 resource_name = "end_animation"
@@ -137,6 +149,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": ["Are you alright...?", "Hard day…? I understand…", "Here, I have something that might help…"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/RichTextLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(8.133333, 8.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 7.929515), Vector2(-118.061676, 7.929515)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fa3ud"]
@@ -186,6 +210,45 @@ _data = {
 shader = ExtResource("19_0ectm")
 shader_parameter/magnification = 4.000000142499999
 
+[sub_resource type="Animation" id="Animation_fa3ud"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Background/Rain:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Background/Rain2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Background/Rain3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_0ectm"]
 resource_name = "rain_end"
 length = 9.0
@@ -212,45 +275,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Background/Rain3:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_fa3ud"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Background/Rain:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Background/Rain2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -333,6 +357,7 @@ transform = Transform2D(1.135, 0, 0, 1.135, 0, 0)
 script = ExtResource("8_7q8y5")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = -1.457067
 anchor_top = -1.299
@@ -355,7 +380,7 @@ one_shot = true
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 z_index = 3
 offset_top = 7.929515
-offset_right = 1014.97797
+offset_right = 1014.9779
 offset_bottom = 91.62995
 theme_override_fonts/normal_font = ExtResource("9_xrhou")
 theme_override_font_sizes/normal_font_size = 33
@@ -444,8 +469,10 @@ autoplay = true
 parameters/looping = false
 
 [node name="ItemStatusBar" parent="." instance=ExtResource("13_7q8y5")]
+layer = 0
 
 [node name="UmbrellaStatusBar" parent="." instance=ExtResource("17_tgyys")]
+layer = 0
 
 [node name="End Game Area" type="Area2D" parent="."]
 script = ExtResource("21_jdo7k")

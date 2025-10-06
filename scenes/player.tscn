@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://btamyw4txrvit"]
+[gd_scene load_steps=14 format=3 uid="uid://btamyw4txrvit"]
 
 [ext_resource type="Script" uid="uid://dlt5xgcyehs76" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://2dbo1m7fgv4r" path="res://sprites/animation.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://cbtj75nkwxmks" path="res://sprites/playerwalk1.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dcrw1byrh871l" path="res://sprites/umbrellaclose1.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://dbfgxwv1gg3wm" path="res://sprites/umbrellaclose2.png" id="4_fjrip"]
 [ext_resource type="Texture2D" uid="uid://chrwsqlc5w4bg" path="res://sprites/playerwalk2.png" id="4_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
@@ -29,6 +31,17 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dqkch"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fjrip")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_dqkch")
@@ -71,7 +84,7 @@ visible = false
 position = Vector2(309.00003, -264)
 scale = Vector2(1.2109374, 1.2109376)
 sprite_frames = SubResource("SpriteFrames_dqkch")
-frame_progress = 0.16795355
+animation = &"closed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(208, -205)
