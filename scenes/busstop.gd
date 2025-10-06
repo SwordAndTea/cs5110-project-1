@@ -7,6 +7,7 @@ extends Node2D
 @onready var rich_text_label: RichTextLabel = $CanvasLayer/RichTextLabel
 @onready var end_color: AnimationPlayer = $"end color"
 @onready var ending_boundary: CollisionShape2D = $"boundaries/endbound"
+@onready var rain_3: AnimatedSprite2D = $Background/Rain3
 
 var is_ready := false
 
@@ -15,6 +16,7 @@ func _ready():
 	scene_transition_animation.play("fade_out")
 	rain.play()
 	rain_2.play()
+	rain_3.play()
 	#setting this automatically to true since player acquires magnifying glass during cutscene
 	Global.is_magnifier_pick_up = true
 
@@ -47,7 +49,8 @@ func _on_inside_detect_body_entered(body: Node2D) -> void:
 			await get_tree().create_timer(0.5).timeout
 			Global.goto_scene(Global.SceneName.InDoor)
 			has_triggered_switch_back_to_indoor_scene = true
-
+			Global.focus_on=false
+#test this
 func _on_inside_detect_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		has_triggered_switch_back_to_indoor_scene = false

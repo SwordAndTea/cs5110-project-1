@@ -4,6 +4,7 @@ extends Area2D
 @onready var magic: AudioStreamPlayer = $"../../magic"
 @onready var charging: AudioStreamPlayer2D = $charging
 @onready var journalcolor: Sprite2D = $journalcolor
+@onready var plug: Sprite2D = $plug
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var journal_found: bool = false
@@ -39,6 +40,7 @@ func _input(event: InputEvent) -> void:
 		journal_found=true
 		journalfound.emit()
 		journalcolor.visible=true
+		plug.visible=true
 		
 	elif event.is_action_pressed("left_click") and hovering_object and journal_found==true:
 		Global.update_dialog_text.emit(message_text)

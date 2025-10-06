@@ -4,6 +4,7 @@ extends Area2D
 @onready var kitty_found : bool = false
 @onready var zoom_in_4: Sprite2D = $"../../CanvasLayer/Umbrella/UmbrellaGet/ZoomIn4"
 @onready var kitty: AnimatedSprite2D = $"../../Interactive/Kitty Area/Kitty/Kitty"
+@onready var purr: AudioStreamPlayer = $"../../purr"
 
 signal kittyfound
 
@@ -33,11 +34,15 @@ func _input(event: InputEvent) -> void:
 		Global.update_dialog_text.emit(message_text)
 		zoom_in_4.visible=true
 		magic.play()
+		purr.play()
 		kitty_found=true
 		kitty.play("color")
 		kittyfound.emit()
-		
+	if event.is_action_pressed("ESC"):
+		purr.stop()
+	
 	elif event.is_action_pressed("left_click") and hovering_object and kitty_found==true:
 		Global.update_dialog_text.emit(message_text)
 		zoom_in_4.visible=true
 		magic.play()
+	

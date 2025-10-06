@@ -23,6 +23,7 @@ func _enter_tree() -> void:
 		_ready()
 
 func _ready():
+	scene_transition_animation.get_parent().get_node("ColorRect").color.a = 255
 	scene_transition_animation.play("fade_out")
 	rain.play()
 	rain_2.play()

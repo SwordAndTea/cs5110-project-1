@@ -27,7 +27,7 @@ func _input(event: InputEvent) -> void:
 		Global.is_playing_end_game_animation = true
 		endgame.play("end_animation")
 		player.set_physics_process(false) 
-		umbrella.stop() 
+		player.process_mode = player.PROCESS_MODE_DISABLED
 		rain_end.play()
 		await endgame.animation_finished
 		animation_player.play("slow_fade_out")
