@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 400.0
+const SPEED = 4000.0
 const JUMP_VELOCITY = 0.0
 
 #signal player_state_changed(state)
@@ -31,9 +31,9 @@ func _process(_delta):
 		_animated_sprite.play("run")
 		
 	elif Input.is_action_pressed("ui_right") and Global.is_umbrella_pick_up == true and Global.current_scene_name ==Global.SceneName.InDoor:
-		_animated_sprite.play("run")
+		umbrella.play("closed")
 	elif Input.is_action_pressed("ui_left") and Global.is_umbrella_pick_up == true and Global.current_scene_name ==Global.SceneName.InDoor:
-		_animated_sprite.play("run")
+		umbrella.play("closed")
 	
 	elif Global.current_scene_name == Global.SceneName.Busstop and Global.is_umbrella_pick_up == true:
 		_animated_sprite.visible=false

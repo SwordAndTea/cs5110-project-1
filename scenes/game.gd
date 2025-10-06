@@ -40,7 +40,3 @@ func _on_outside_detect_body_entered(body: Node2D) -> void:
 func _on_outside_detect_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		has_triggered_change_scene = false
-
-
-func _on_toaster_pulse_mouse_entered() -> void:
-	pass # Replace with function body.

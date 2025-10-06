@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://7cgsasybcd18"]
+[gd_scene load_steps=142 format=3 uid="uid://7cgsasybcd18"]
 
 [ext_resource type="Script" uid="uid://yxcxguixvey" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -57,6 +57,8 @@
 [ext_resource type="Script" uid="uid://d1y4s4v8d2mld" path="res://scenes/zoom_in_0.gd" id="32_3hbvx"]
 [ext_resource type="Shader" uid="uid://cfqty0llnstyd" path="res://shaders/magnifying_effect.gdshader" id="32_v2yb1"]
 [ext_resource type="Texture2D" uid="uid://ceigpsw10a4o1" path="res://sprites/mask.png" id="33_js0lu"]
+[ext_resource type="Script" uid="uid://dvgwm1etic6ad" path="res://scenes/umbrella_missing.gd" id="34_3x338"]
+[ext_resource type="Texture2D" uid="uid://dhsgyvh6np8uu" path="res://sprites/umbrelladots.png" id="34_753oq"]
 [ext_resource type="Script" uid="uid://bnro6klm0i0pr" path="res://scripts/magnifying_effect.gd" id="34_js0lu"]
 [ext_resource type="Texture2D" uid="uid://6i3tbsew68ov" path="res://sprites/zoom in 4.png" id="36_i4re6"]
 [ext_resource type="Script" uid="uid://cs1gbim1mpick" path="res://scenes/zoom_in_2.gd" id="36_q8j3a"]
@@ -65,10 +67,15 @@
 [ext_resource type="Texture2D" uid="uid://qxem08wnlojk" path="res://sprites/zoom in 5.png" id="38_7ixpq"]
 [ext_resource type="Script" uid="uid://dwn6krd1ijncl" path="res://scenes/toaster_pulse.gd" id="38_7nv0b"]
 [ext_resource type="Script" uid="uid://b4dvohyj35see" path="res://scenes/umbrella.gd" id="38_ms3bu"]
+[ext_resource type="Script" uid="uid://duib3p1i6vdst" path="res://scenes/journal_pulse.gd" id="39_7gkqi"]
 [ext_resource type="AudioStream" uid="uid://38w4yx4fgsk5" path="res://Music/magic-244951.mp3" id="40_05nbr"]
 [ext_resource type="Script" uid="uid://defeib8k85bql" path="res://scenes/zoom_in_4.gd" id="40_7ixpq"]
 [ext_resource type="PackedScene" uid="uid://b7j53rnva35n1" path="res://scenes/umbrella_status_bar.tscn" id="41_q8j3a"]
 [ext_resource type="Script" uid="uid://dpwbg0ek53sg6" path="res://scenes/umbrella_status_bar.gd" id="42_ms3bu"]
+[ext_resource type="Script" uid="uid://ik6njfjvv3w0" path="res://scenes/plug_find.gd" id="45_753oq"]
+[ext_resource type="AudioStream" uid="uid://cs1rnfs4htdnd" path="res://Music/insert-charging-cable-into-smartphone-393115.mp3" id="46_3x338"]
+[ext_resource type="Texture2D" uid="uid://ck52svsh7yws2" path="res://sprites/journalcolor.png" id="49_1yg85"]
+[ext_resource type="Texture2D" uid="uid://benmi0y8qx1mk" path="res://sprites/good day.png" id="57_1yg85"]
 [ext_resource type="AudioStream" uid="uid://bslll3p7uhr4x" path="res://Music/shine-9-268911.mp3" id="59_bnuda"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
@@ -343,6 +350,9 @@ animations = [{
 "speed": 9.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_753oq"]
+size = Vector2(433, 431)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8ral"]
 size = Vector2(207, 220)
 
@@ -408,6 +418,16 @@ fill_from = Vector2(0.5, 0.4861111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yg85"]
 size = Vector2(312, 197.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gnni"]
+size = Vector2(175, 103)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vgxg3"]
+gradient = SubResource("Gradient_3x28f")
+width = 200
+height = 120
+fill = 1
+fill_from = Vector2(0.5, 0.4861111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0g06"]
 size = Vector2(153, 92)
@@ -669,6 +689,19 @@ stream = ExtResource("23_458eo")
 volume_db = -0.2
 parameters/looping = true
 
+[node name="Umbrella Missing" type="Area2D" parent="Interactive"]
+script = ExtResource("34_3x338")
+
+[node name="umbrelladots" type="CollisionShape2D" parent="Interactive/Umbrella Missing"]
+position = Vector2(2048.5, -383.5)
+shape = SubResource("RectangleShape2D_753oq")
+
+[node name="umbrella missing" type="Sprite2D" parent="Interactive/Umbrella Missing/umbrelladots"]
+visible = false
+modulate = Color(1, 1, 1, 0.56078434)
+position = Vector2(-7.5, 29.5)
+texture = ExtResource("34_753oq")
+
 [node name="Pulse Effect" type="Node" parent="."]
 
 [node name="fridge pulse" type="Area2D" parent="Pulse Effect"]
@@ -754,6 +787,23 @@ texture = SubResource("GradientTexture2D_l6q63")
 lifetime = 2.6799999999999997
 process_material = SubResource("ParticleProcessMaterial_bnuda")
 
+[node name="journal pulse" type="Area2D" parent="Pulse Effect"]
+script = ExtResource("39_7gkqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pulse Effect/journal pulse"]
+position = Vector2(-2956.5, -340.5)
+shape = SubResource("RectangleShape2D_2gnni")
+
+[node name="journal find glow" type="GPUParticles2D" parent="Pulse Effect/journal pulse/CollisionShape2D"]
+visible = false
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_bk1p3")
+position = Vector2(3.5, -0.5)
+amount = 1
+texture = SubResource("GradientTexture2D_vgxg3")
+lifetime = 2.6799999999999997
+process_material = SubResource("ParticleProcessMaterial_bnuda")
+
 [node name="Findables" type="Node" parent="."]
 
 [node name="toaster find" type="Area2D" parent="Findables"]
@@ -803,6 +853,22 @@ message_text = "Look at that… you’re still hanging in there...!"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/plant find"]
 position = Vector2(73.3334, -216.33333)
 shape = SubResource("RectangleShape2D_66xif")
+
+[node name="journal find" type="Area2D" parent="Findables"]
+script = ExtResource("45_753oq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Findables/journal find"]
+position = Vector2(-2956.5, -340.5)
+shape = SubResource("RectangleShape2D_2gnni")
+
+[node name="charging" type="AudioStreamPlayer2D" parent="Findables/journal find"]
+position = Vector2(-2964, -353)
+stream = ExtResource("46_3x338")
+
+[node name="journalcolor" type="Sprite2D" parent="Findables/journal find"]
+visible = false
+position = Vector2(-2927, -335)
+texture = ExtResource("49_1yg85")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(1.135, 1.135)
@@ -860,6 +926,13 @@ scale = Vector2(0.38951355, 0.3895137)
 texture = ExtResource("38_7ixpq")
 script = ExtResource("23_suyxu")
 
+[node name="ZoomIn6" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(510.13214, 320.70483)
+scale = Vector2(0.38951355, 0.3895137)
+texture = ExtResource("57_1yg85")
+script = ExtResource("23_suyxu")
+
 [node name="Umbrella" type="Area2D" parent="CanvasLayer"]
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
@@ -883,9 +956,11 @@ wait_time = 3.0
 one_shot = true
 
 [node name="UmbrellaStatusBar" parent="." instance=ExtResource("41_q8j3a")]
+layer = 0
 script = ExtResource("42_ms3bu")
 
 [node name="ItemStatusBar" parent="." instance=ExtResource("31_qouja")]
+layer = 0
 
 [node name="MagnifyingEffect" type="Sprite2D" parent="."]
 visible = false
@@ -953,7 +1028,7 @@ frame_progress = 0.600637
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("30_sgl2t")]
 z_index = 5
 z_as_relative = false
-position = Vector2(139, 8)
+position = Vector2(129, 12)
 
 [connection signal="body_entered" from="OutsideDetect" to="." method="_on_outside_detect_body_entered"]
 [connection signal="body_exited" from="OutsideDetect" to="." method="_on_outside_detect_body_exited"]
@@ -977,6 +1052,8 @@ position = Vector2(139, 8)
 [connection signal="mouse_exited" from="Interactive/Toaster Area" to="Interactive/Toaster Area" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Interactive/Alarm Area" to="Interactive/Alarm Area" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interactive/Alarm Area" to="Interactive/Alarm Area" method="_on_mouse_exited"]
+[connection signal="body_entered" from="Interactive/Umbrella Missing" to="Interactive/Umbrella Missing" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactive/Umbrella Missing" to="Interactive/Umbrella Missing" method="_on_body_exited"]
 [connection signal="mouse_entered" from="Pulse Effect/fridge pulse" to="Pulse Effect/fridge pulse" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Pulse Effect/fridge pulse" to="Pulse Effect/fridge pulse" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pulse Effect/plant pulse" to="Pulse Effect/plant pulse" method="_on_mouse_entered"]
@@ -987,6 +1064,8 @@ position = Vector2(139, 8)
 [connection signal="mouse_exited" from="Pulse Effect/kitty pulse" to="Pulse Effect/kitty pulse" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Pulse Effect/toaster pulse" to="Pulse Effect/toaster pulse" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Pulse Effect/toaster pulse" to="Pulse Effect/toaster pulse" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Pulse Effect/journal pulse" to="Pulse Effect/journal pulse" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Pulse Effect/journal pulse" to="Pulse Effect/journal pulse" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Findables/toaster find" to="Findables/toaster find" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Findables/toaster find" to="Findables/toaster find" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Findables/fridge find" to="Findables/fridge find" method="_on_mouse_entered"]
@@ -997,5 +1076,7 @@ position = Vector2(139, 8)
 [connection signal="mouse_exited" from="Findables/window find" to="Findables/window find" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Findables/plant find" to="Findables/plant find" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Findables/plant find" to="Findables/plant find" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Findables/journal find" to="Findables/journal find" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Findables/journal find" to="Findables/journal find" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Umbrella" to="CanvasLayer/Umbrella" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Umbrella" to="CanvasLayer/Umbrella" method="_on_mouse_exited"]
