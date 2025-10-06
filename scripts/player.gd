@@ -19,9 +19,12 @@ func _ready() -> void:
 	if Global.current_scene_name == Global.SceneName.InDoor:
 		camera_2d.limit_right = 2200
 	elif Global.current_scene_name == Global.SceneName.Busstop:
-		camera_2d.limit_right = 1100
+		camera_2d.limit_right = 300
 
 func _process(_delta):
+	if Global.is_playing_end_game_animation:
+		return
+		
 	if Input.is_action_pressed("ui_right") and Global.is_umbrella_pick_up==false:
 		_animated_sprite.play("run")
 	elif Input.is_action_pressed("ui_left") and Global.is_umbrella_pick_up==false:
@@ -50,9 +53,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	## Handle jump.
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction !=0:

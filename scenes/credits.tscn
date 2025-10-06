@@ -1,10 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://csxnijlat2ou"]
+[gd_scene load_steps=9 format=3 uid="uid://csxnijlat2ou"]
 
 [ext_resource type="Script" uid="uid://qevipj3p4v8v" path="res://scripts/credits.gd" id="1_aq4fm"]
 [ext_resource type="Texture2D" uid="uid://cbtj75nkwxmks" path="res://sprites/playerwalk1.png" id="2_8gwij"]
+[ext_resource type="Texture2D" uid="uid://bmtrdd0hmgl7a" path="res://sprites/ui/TitleCard.png" id="2_mah5v"]
 [ext_resource type="Texture2D" uid="uid://chrwsqlc5w4bg" path="res://sprites/playerwalk2.png" id="3_mah5v"]
 [ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="4_kyhnv"]
 [ext_resource type="PackedScene" uid="uid://bjlwfjxkywprp" path="res://scenes/scene_transition_animation.tscn" id="6_mah5v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyhnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mah5v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ooihk"]
 animations = [{
@@ -23,17 +35,27 @@ animations = [{
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_aq4fm")
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+light_mask = 0
+z_index = 2
+position = Vector2(303, 151)
+scale = Vector2(0.19201438, 0.19201438)
+sprite_frames = SubResource("SpriteFrames_kyhnv")
+
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(23, 1)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-1741, -582, -1814, 761, 1815, 757, 1825, -672)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(320, 355)
+position = Vector2(338, 391)
+scale = Vector2(0.8723958, 0.8723959)
 sprite_frames = SubResource("SpriteFrames_ooihk")
 autoplay = "default"
 frame_progress = 0.91849315
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 z_as_relative = false
 offset_left = 334.0
 offset_top = 54.0
@@ -46,25 +68,26 @@ text = "After the Rain"
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("6_mah5v")]
 z_index = 3
 z_as_relative = false
+position = Vector2(-51, 0)
 
 [node name="credits" type="Node" parent="."]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 552.0
-offset_top = 149.0
-offset_right = 1080.0
-offset_bottom = 298.0
+offset_left = 555.0
+offset_top = 83.0
+offset_right = 1083.0
+offset_bottom = 232.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 33
 text = "Nicole Cerundolo:"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 551.0
-offset_top = 194.0
-offset_right = 977.0
-offset_bottom = 282.0
+offset_left = 554.0
+offset_top = 128.0
+offset_right = 980.0
+offset_bottom = 216.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
 text = "Project Manager, Lead Game Designer, Lead 2D Artist, Lead Programmer, Level Design, Narrative Design, Audio Design
@@ -72,70 +95,70 @@ text = "Project Manager, Lead Game Designer, Lead 2D Artist, Lead Programmer, Le
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 552.0
-offset_top = 288.0
-offset_right = 1080.0
-offset_bottom = 437.0
+offset_left = 555.0
+offset_top = 222.0
+offset_right = 1083.0
+offset_bottom = 371.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 33
 text = "Namrata Shajwani:"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 551.0
-offset_top = 333.0
-offset_right = 977.0
-offset_bottom = 421.0
+offset_left = 554.0
+offset_top = 267.0
+offset_right = 980.0
+offset_bottom = 355.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
 text = "Lead 2D Artist, Environment Design"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 552.0
-offset_top = 387.0
-offset_right = 1080.0
-offset_bottom = 536.0
+offset_left = 555.0
+offset_top = 321.0
+offset_right = 1083.0
+offset_bottom = 470.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 33
 text = "Wei Xiang"
 
 [node name="RichTextLabel6" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 551.0
-offset_top = 432.0
-offset_right = 977.0
-offset_bottom = 520.0
+offset_left = 554.0
+offset_top = 366.0
+offset_right = 980.0
+offset_bottom = 454.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
 text = "Programmer"
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 552.0
-offset_top = 483.0
-offset_right = 1080.0
-offset_bottom = 632.0
+offset_left = 555.0
+offset_top = 417.0
+offset_right = 1083.0
+offset_bottom = 566.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 33
 text = "Yanjun Liu"
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 551.0
-offset_top = 528.0
-offset_right = 977.0
-offset_bottom = 616.0
+offset_left = 554.0
+offset_top = 462.0
+offset_right = 980.0
+offset_bottom = 550.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
 text = "2D Artist, Character Design"
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="credits"]
 z_as_relative = false
-offset_left = 549.0
-offset_top = 585.0
-offset_right = 1228.0
-offset_bottom = 673.0
+offset_left = 552.0
+offset_top = 519.0
+offset_right = 1231.0
+offset_bottom = 607.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
 text = "Special Thanks to Brandon Gioggia and JD Mullally "

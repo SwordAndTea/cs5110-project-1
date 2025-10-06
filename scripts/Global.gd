@@ -13,10 +13,11 @@ var cutscene_done = false
 signal magnifier_pick_up
 signal umbrella_pick_up
 
+var indoor_scene := preload("res://scenes/game.tscn").instantiate()
 var busstop_scene := preload("res://scenes/busstop.tscn").instantiate()
 var credits_scene := preload("res://scenes/credits.tscn").instantiate()
 var cutscene := preload("res://scenes/cutscene.tscn").instantiate()
-var indoor_scene := preload("res://scenes/game.tscn").instantiate()
+
 
 enum SceneName {
 	Start,
@@ -43,18 +44,13 @@ var is_umbrella_pick_up := false:
 		is_umbrella_pick_up = value
 		if value == true:
 			umbrella_pick_up.emit()
+			
+var is_playing_end_game_animation := false
 
 func _ready():
 	current_scene = get_tree().current_scene
-	indoor_scene = current_scene # indoor scene is the default current scene when start the game
 	
-
 func goto_scene(scene_name: SceneName):
-	#current_scene.free()
-	#var s = ResourceLoader.load(path)
-	#current_scene = s.instantiate()
-	#get_tree().root.add_child(current_scene)
-	#get_tree().current_scene = current_scene
 	if current_scene:
 		get_tree().root.remove_child(current_scene)
 	if scene_name == SceneName.InDoor:
