@@ -111,14 +111,14 @@ offset_right = 980.0
 offset_bottom = 355.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
-text = "Lead 2D Artist, Environment Design"
+text = "Lead 2D Artist, Environment Design, Branding"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="credits"]
 z_as_relative = false
 offset_left = 555.0
-offset_top = 321.0
+offset_top = 337.0
 offset_right = 1083.0
-offset_bottom = 470.0
+offset_bottom = 486.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 33
 text = "Wei Xiang"
@@ -126,9 +126,9 @@ text = "Wei Xiang"
 [node name="RichTextLabel6" type="RichTextLabel" parent="credits"]
 z_as_relative = false
 offset_left = 554.0
-offset_top = 366.0
+offset_top = 382.0
 offset_right = 980.0
-offset_bottom = 454.0
+offset_bottom = 470.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
 text = "Programmer"
@@ -136,9 +136,9 @@ text = "Programmer"
 [node name="RichTextLabel7" type="RichTextLabel" parent="credits"]
 z_as_relative = false
 offset_left = 555.0
-offset_top = 417.0
+offset_top = 433.0
 offset_right = 1083.0
-offset_bottom = 566.0
+offset_bottom = 582.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 33
 text = "Yanjun Liu"
@@ -146,9 +146,9 @@ text = "Yanjun Liu"
 [node name="RichTextLabel8" type="RichTextLabel" parent="credits"]
 z_as_relative = false
 offset_left = 554.0
-offset_top = 462.0
+offset_top = 478.0
 offset_right = 980.0
-offset_bottom = 550.0
+offset_bottom = 566.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
 text = "2D Artist, Character Design"
@@ -156,9 +156,9 @@ text = "2D Artist, Character Design"
 [node name="RichTextLabel9" type="RichTextLabel" parent="credits"]
 z_as_relative = false
 offset_left = 552.0
-offset_top = 519.0
+offset_top = 535.0
 offset_right = 1231.0
-offset_bottom = 607.0
+offset_bottom = 623.0
 theme_override_fonts/normal_font = ExtResource("4_kyhnv")
 theme_override_font_sizes/normal_font_size = 20
 text = "Special Thanks to Brandon Gioggia and JD Mullally "
