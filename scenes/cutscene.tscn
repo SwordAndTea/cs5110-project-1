@@ -944,6 +944,7 @@ rotation = -0.114826865
 texture = ExtResource("21_l5lt3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 visible = false

@@ -24,6 +24,7 @@ func _on_mouse_exited() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") and hovering_object:
 		print ("help")
+		Global.is_playing_end_game_animation = true
 		endgame.play("end_animation")
 		player.set_physics_process(false) 
 		umbrella.stop() 
@@ -31,5 +32,6 @@ func _input(event: InputEvent) -> void:
 		await endgame.animation_finished
 		animation_player.play("slow_fade_out")
 		await animation_player.animation_finished
+		Global.is_playing_end_game_animation = false
 		await get_tree().create_timer(0.5).timeout
 		Global.goto_scene(Global.SceneName.Credits)
