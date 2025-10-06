@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 4000.0
+const SPEED = 400.0
 const JUMP_VELOCITY = 0.0
 
 #signal player_state_changed(state)
@@ -22,40 +22,34 @@ func _ready() -> void:
 		camera_2d.limit_right = 300
 
 func _process(_delta):
-	if Global.is_playing_end_game_animation:
-		return
-		
-	if Input.is_action_pressed("ui_right") and Global.is_umbrella_pick_up==false:
+	if Input.is_action_pressed("movement") and Global.is_umbrella_pick_up==false:		
 		_animated_sprite.play("run")
-	elif Input.is_action_pressed("ui_left") and Global.is_umbrella_pick_up==false:
+			
+	elif Input.is_action_pressed("movement") and Global.is_umbrella_pick_up == true and Global.current_scene_name ==Global.SceneName.InDoor:
+		_animated_sprite.visible=false
+		umbrella.visible = true
+		umbrella.play("closed")
 		_animated_sprite.play("run")
 		
-	elif Input.is_action_pressed("ui_right") and Global.is_umbrella_pick_up == true and Global.current_scene_name ==Global.SceneName.InDoor:
-		umbrella.play("closed")
-	elif Input.is_action_pressed("ui_left") and Global.is_umbrella_pick_up == true and Global.current_scene_name ==Global.SceneName.InDoor:
-		umbrella.play("closed")
+	elif Global.is_umbrella_pick_up == true and Global.current_scene_name ==Global.SceneName.InDoor and not Input.is_action_pressed("movement"):
+			umbrella.stop()
 	
 	elif Global.current_scene_name == Global.SceneName.Busstop and Global.is_umbrella_pick_up == true:
 		_animated_sprite.visible=false
 		umbrella.visible = true
-		if Input.is_action_pressed("ui_right"):
-			umbrella.play("default")
-		elif Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("movement"):
 			umbrella.play("default")
 		else: 
 			umbrella.stop()
-	
 	else:
 		_animated_sprite.stop()
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	## Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction !=0:
