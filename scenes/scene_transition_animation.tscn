@@ -88,7 +88,8 @@ _data = {
 &"slow_fade_out": SubResource("Animation_ai4fy")
 }
 
-[node name="SceneTransitionAnimation" type="Node2D"]
+[node name="SceneTransitionAnimation" type="CanvasLayer"]
+layer = 9
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -71585.0
