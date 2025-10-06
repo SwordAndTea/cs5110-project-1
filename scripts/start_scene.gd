@@ -2,20 +2,21 @@ extends Control
 
 @onready var scene_transition_animation: AnimationPlayer = $SceneTransitionAnimation/AnimationPlayer
 @onready var setting_panel: SubViewportContainer = $SettingPanel
+@onready var click: AudioStreamPlayer = $click
+@onready var title: AnimatedSprite2D = $title
 
 var master_bus_index : int
 
 func _ready() -> void:
 	master_bus_index = AudioServer.get_bus_index("Master")
-	
-
+	title.play()
 
 func _on_start_game_button_pressed() -> void:
+	click.play()
 	scene_transition_animation.play("fadein")
 	await scene_transition_animation.animation_finished
 	await get_tree().create_timer(0.5).timeout
-	Global.goto_scene(Global.SceneName.InDoor)
-
+	Global.goto_scene(Global.SceneName.InDoor)	
 
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(master_bus_index, linear_to_db(value))
