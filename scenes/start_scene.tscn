@@ -1,4 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://b6o2jifspybxk"]
+
+[gd_scene load_steps=20 format=3 uid="uid://b6o2jifspybxk"]
 
 [ext_resource type="Script" uid="uid://cuiv74pt885sp" path="res://scripts/start_scene.gd" id="1_u7rsi"]
 [ext_resource type="Texture2D" uid="uid://bmtrdd0hmgl7a" path="res://sprites/ui/TitleCard.png" id="2_2l3yw"]
@@ -8,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b8puwn8magn68" path="res://sprites/ui/pressedbutton.png" id="5_2525w"]
 [ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="6_2l3yw"]
 [ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="7_6vkx6"]
+[ext_resource type="Texture2D" uid="uid://cak3t86d0mbh3" path="res://sprites/ui/setting.png" id="8_6vkx6"]
+[ext_resource type="Texture2D" uid="uid://dt4uioxsotmre" path="res://sprites/ui/volume.png" id="9_u6lbi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u6lbi"]
 animations = [{
@@ -60,6 +63,28 @@ height = 1009
 fill = 1
 fill_from = Vector2(0.48130846, 0.48117402)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vkx6"]
+bg_color = Color(0.43946847, 0.59797275, 0.9117067, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dgwj"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6lbi"]
+bg_color = Color(0.764646, 0.54903424, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="StartScene" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -89,7 +114,7 @@ scale = Vector2(0.47687817, 0.37943548)
 sprite_frames = SubResource("SpriteFrames_3dgwj")
 autoplay = "default"
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="StartGameButton" type="TextureButton" parent="."]
 z_index = 2
 layout_mode = 1
 anchors_preset = 7
@@ -107,27 +132,6 @@ texture_normal = ExtResource("4_2525w")
 texture_pressed = ExtResource("5_2525w")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -367.75
-offset_top = -59.5
-offset_right = 367.75
-offset_bottom = 59.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("6_2l3yw")
-theme_override_font_sizes/normal_font_size = 96
-text = "After Rain"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("4_i331m")]
 z_index = 3
@@ -150,4 +154,129 @@ rotation = -3.1415925
 texture = SubResource("GradientTexture2D_3dgwj")
 height = 308.0
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="SettingButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 9.0
+offset_right = 1148.0
+offset_bottom = 58.0
+texture_normal = ExtResource("8_6vkx6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SettingPanel" type="SubViewportContainer" parent="."]
+visible = false
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SettingPanel"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Control" type="Control" parent="SettingPanel/SubViewport"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -250.0
+offset_right = 325.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="SettingPanel/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6vkx6")
+
+[node name="Heading" type="Label" parent="SettingPanel/SubViewport/Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 19.0
+offset_right = 80.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_2l3yw")
+theme_override_font_sizes/font_size = 36
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureRect" parent="SettingPanel/SubViewport/Control/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 73.0
+offset_top = -34.0
+offset_right = 146.0
+offset_bottom = 34.0
+grow_vertical = 2
+texture = ExtResource("9_u6lbi")
+expand_mode = 1
+
+[node name="VolumeSlider" type="HSlider" parent="SettingPanel/SubViewport/Control/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -478.0
+offset_top = -15.5
+offset_right = -94.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_3dgwj")
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="SettingPanelCloseButton" type="Button" parent="SettingPanel/SubViewport/Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.5
+offset_top = -98.0
+offset_right = 70.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_2l3yw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u6lbi")
+text = "OK"
+
+[node name="MainVolumeLabel" type="Label" parent="SettingPanel/SubViewport/Control/Panel"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 188.0
+offset_right = 128.0
+offset_bottom = 211.0
+
+[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="value_changed" from="SettingPanel/SubViewport/Control/Panel/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="SettingPanel/SubViewport/Control/Panel/SettingPanelCloseButton" to="." method="_on_setting_panel_close_button_pressed"]

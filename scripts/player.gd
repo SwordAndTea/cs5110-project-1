@@ -22,7 +22,7 @@ func _ready() -> void:
 		camera_2d.limit_right = 300
 
 func _process(_delta):
-	if Input.is_action_pressed("movement") and Global.is_umbrella_pick_up==false:
+	if Input.is_action_pressed("movement") and Global.is_umbrella_pick_up==false:		
 		_animated_sprite.play("run")
 			
 	elif Input.is_action_pressed("movement") and Global.is_umbrella_pick_up == true and Global.current_scene_name ==Global.SceneName.InDoor:
@@ -47,6 +47,7 @@ func _process(_delta):
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
