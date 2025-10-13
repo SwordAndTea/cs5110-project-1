@@ -6,8 +6,8 @@ extends Area2D
 @onready var window_found : bool = false
 @onready var window_2: AnimatedSprite2D = $"../../Window 2"
 
-var pointer = load("res://sprites/pointer.png")
-var clicker = load("res://sprites/Clicker.png")
+var pointer = load("uid://bvcwntyc2p6yq")
+var clicker = preload("uid://btw3iel4apm6u")
 signal windowfound
 
 func _on_mouse_entered() -> void:

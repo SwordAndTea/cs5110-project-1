@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b6o2jifspybxk"]
+[gd_scene load_steps=33 format=3 uid="uid://b6o2jifspybxk"]
 
 [ext_resource type="Script" uid="uid://cuiv74pt885sp" path="res://scripts/start_scene.gd" id="1_u7rsi"]
 [ext_resource type="Texture2D" uid="uid://b0as0v1oa04x" path="res://sprites/rain.png" id="2_sg87u"]
@@ -13,14 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://b3cfxjf33wyao" path="res://sprites/ui/TitleCard_Branding/IMG_4409.PNG" id="6_qtomu"]
 [ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="7_6vkx6"]
 [ext_resource type="Texture2D" uid="uid://cqgu5k388ybp" path="res://sprites/ui/TitleCard_Branding/IMG_4410.PNG" id="7_rg3et"]
-[ext_resource type="Texture2D" uid="uid://cak3t86d0mbh3" path="res://sprites/ui/setting.png" id="8_6vkx6"]
 [ext_resource type="Texture2D" uid="uid://veyjwnw653pj" path="res://sprites/ui/TitleCard_Branding/IMG_4411.PNG" id="8_l05mi"]
 [ext_resource type="Texture2D" uid="uid://cdrc640e2cddi" path="res://sprites/ui/TitleCard_Branding/IMG_4412.PNG" id="9_ps813"]
-[ext_resource type="Texture2D" uid="uid://dt4uioxsotmre" path="res://sprites/ui/volume.png" id="9_u6lbi"]
 [ext_resource type="Texture2D" uid="uid://dag0lsm8rwp2p" path="res://sprites/ui/TitleCard_Branding/IMG_4413.PNG" id="10_tii70"]
 [ext_resource type="AudioStream" uid="uid://dif65delg2ie" path="res://Music/ui-interface-sound-9-299037.mp3" id="11_3dgwj"]
 [ext_resource type="Texture2D" uid="uid://ctt8h0shyxcqr" path="res://sprites/ui/TitleCard_Branding/IMG_4414.PNG" id="11_f88pl"]
 [ext_resource type="Texture2D" uid="uid://dyqga221t05oj" path="res://sprites/ui/TitleCard_Branding/IMG_4416.PNG" id="12_6wj50"]
+[ext_resource type="Texture2D" uid="uid://cm1aqotityi5s" path="res://sprites/ui/settings.png" id="18_yu0ib"]
+[ext_resource type="Script" uid="uid://cson35hu5ed1m" path="res://scenes/setting_button.gd" id="19_ffewf"]
+[ext_resource type="Texture2D" uid="uid://badm0vcbv0eo2" path="res://sprites/ui/small volume.png" id="20_yu0ib"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u6lbi"]
 animations = [{
@@ -104,26 +105,34 @@ fill = 1
 fill_from = Vector2(0.48130846, 0.48117402)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vkx6"]
-bg_color = Color(0.43946847, 0.59797275, 0.9117067, 1)
+bg_color = Color(0, 0, 0, 0.8156863)
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dgwj"]
+bg_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
+expand_margin_left = 1.0
+expand_margin_top = 9.0
+expand_margin_bottom = 9.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6lbi"]
-bg_color = Color(0.764646, 0.54903424, 1, 1)
+bg_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.61960787, 0.61960787, 0.61960787, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+expand_margin_top = 10.0
 
 [node name="StartScene" type="Control"]
 layout_mode = 3
@@ -143,7 +152,7 @@ script = ExtResource("1_u7rsi")
 [node name="title" type="AnimatedSprite2D" parent="."]
 light_mask = 0
 z_index = 2
-position = Vector2(580, 284.00003)
+position = Vector2(592, 283.50012)
 scale = Vector2(0.19201438, 0.19201438)
 sprite_frames = SubResource("SpriteFrames_u6lbi")
 frame = 10
@@ -173,10 +182,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -233.0
-offset_top = -330.0
-offset_right = 248.53418
-offset_bottom = -16.0
+offset_left = -221.0
+offset_top = -330.4999
+offset_right = 260.53418
+offset_bottom = -16.499878
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("4_2525w")
@@ -197,31 +206,42 @@ position = Vector2(458, -177.00012)
 scale = Vector2(0.6874439, 0.6874439)
 texture = ExtResource("7_6vkx6")
 
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(458, -177.00012)
+scale = Vector2(0.6874439, 0.6874439)
+texture = ExtResource("7_6vkx6")
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 z_as_relative = false
-position = Vector2(563, 343)
+position = Vector2(575, 342.5001)
 rotation = -3.1415925
 texture = SubResource("GradientTexture2D_3dgwj")
 height = 308.0
 
 [node name="SettingButton" type="TextureButton" parent="."]
-visible = false
+z_index = 1
 layout_mode = 0
-offset_left = 1072.0
-offset_top = 9.0
-offset_right = 1148.0
-offset_bottom = 58.0
-texture_normal = ExtResource("8_6vkx6")
+offset_left = 1039.5951
+offset_top = 6.0
+offset_right = 1155.2314
+offset_bottom = 94.0
+texture_normal = ExtResource("18_yu0ib")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("19_ffewf")
 
 [node name="SettingPanel" type="SubViewportContainer" parent="."]
 visible = false
+light_mask = 2
 z_index = 10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -43.0
+offset_right = 23.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
@@ -251,6 +271,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = 162.0
+offset_right = -23.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6vkx6")
@@ -260,15 +284,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -80.0
-offset_top = 19.0
-offset_right = 80.0
-offset_bottom = 85.0
+offset_left = -128.0
+offset_top = 68.0
+offset_right = 132.0
+offset_bottom = 134.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_2l3yw")
 theme_override_font_sizes/font_size = 36
-text = "Settings"
+text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -277,12 +301,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 73.0
-offset_top = -34.0
-offset_right = 146.0
-offset_bottom = 34.0
+offset_left = 82.0
+offset_top = -26.0
+offset_right = 167.02942
+offset_bottom = 33.0
 grow_vertical = 2
-texture = ExtResource("9_u6lbi")
+texture = ExtResource("20_yu0ib")
 expand_mode = 1
 
 [node name="VolumeSlider" type="HSlider" parent="SettingPanel/SubViewport/Control/Panel"]
@@ -292,10 +316,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -478.0
-offset_top = -15.5
-offset_right = -94.0
-offset_bottom = 15.5
+offset_left = -461.0
+offset_top = -12.0
+offset_right = -76.96997
+offset_bottom = 19.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_3dgwj")
@@ -310,27 +334,32 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -70.5
-offset_top = -98.0
-offset_right = 70.5
-offset_bottom = -42.0
+offset_left = -68.0
+offset_top = -100.0
+offset_right = 73.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("6_2l3yw")
+theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_u6lbi")
-text = "OK"
+text = "CONFIRM"
 
 [node name="MainVolumeLabel" type="Label" parent="SettingPanel/SubViewport/Control/Panel"]
+visible = false
 layout_mode = 0
-offset_left = 88.0
-offset_top = 188.0
-offset_right = 128.0
-offset_bottom = 211.0
+offset_left = 277.0
+offset_top = 207.0
+offset_right = 395.0
+offset_bottom = 230.0
+text = "Master Volume"
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_3dgwj")
 
 [connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="mouse_entered" from="SettingButton" to="SettingButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SettingButton" to="SettingButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="value_changed" from="SettingPanel/SubViewport/Control/Panel/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="SettingPanel/SubViewport/Control/Panel/SettingPanelCloseButton" to="." method="_on_setting_panel_close_button_pressed"]

@@ -1,10 +1,11 @@
 extends Area2D
 @onready var hovering_object : bool = false
 @onready var fridge_anim: AnimatedSprite2D = $Fridge/FridgeAnim
-@onready var fridge_sound: AudioStreamPlayer2D = $"Fridge/FridgeAnim/Fridge Sound"
+@onready var fridge_open: AudioStreamPlayer = $"Fridge/FridgeAnim/fridge open"
+@onready var fridge_close: AudioStreamPlayer = $"Fridge/FridgeAnim/fridge close"
 
-var pointer = load("res://sprites/pointer.png")
-var clicker = load("res://sprites/Clicker.png")
+var pointer = load("uid://bvcwntyc2p6yq")
+var clicker = preload("uid://btw3iel4apm6u")
 
 var is_fridge_open = false
 
@@ -24,9 +25,10 @@ func _input(event: InputEvent) -> void:
 		if not is_fridge_open:
 			Global.update_dialog_text.emit(message_text)
 			fridge_anim.play("open_without_close")
-			fridge_sound.play()
+			fridge_open.play()
 			is_fridge_open = true
 		else:
 			Global.update_dialog_text.emit("")
+			fridge_close.play()
 			fridge_anim.play("closed")
 			is_fridge_open = false

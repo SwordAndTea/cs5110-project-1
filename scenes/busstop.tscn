@@ -382,10 +382,11 @@ scale = Vector2(4, 4)
 position = Vector2(-244.5, -74.75)
 shape = SubResource("RectangleShape2D_xjad6")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("timer")]
 scale = Vector2(1.135, 1.135)
 transform = Transform2D(1.135, 0, 0, 1.135, 0, 0)
 script = ExtResource("8_7q8y5")
+timer = NodePath("Timer")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = -1

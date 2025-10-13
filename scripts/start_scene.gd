@@ -5,6 +5,7 @@ extends Control
 @onready var click: AudioStreamPlayer = $click
 @onready var title: AnimatedSprite2D = $title
 
+
 var master_bus_index : int
 
 func _ready() -> void:
@@ -21,7 +22,7 @@ func _on_start_game_button_pressed() -> void:
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(master_bus_index, linear_to_db(value))
 
-
+	
 func _on_setting_button_pressed() -> void:
 	setting_panel.visible = true
 

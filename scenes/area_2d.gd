@@ -1,8 +1,9 @@
 extends Area2D
 @onready var hovering_object : bool = false
 
-var pointer = load("res://sprites/pointer.png")
-var clicker = load("res://sprites/Clicker.png")
+var pointer = load("uid://bvcwntyc2p6yq")
+var clicker = preload("uid://btw3iel4apm6u")
+
 func _on_mouse_entered() -> void:
 	if Global.is_magnifier_pick_up == false:
 		Input.set_custom_mouse_cursor(clicker)

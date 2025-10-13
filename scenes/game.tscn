@@ -1,16 +1,17 @@
-[gd_scene load_steps=144 format=3 uid="uid://7cgsasybcd18"]
+[gd_scene load_steps=142 format=3 uid="uid://7cgsasybcd18"]
 
 [ext_resource type="Script" uid="uid://yxcxguixvey" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://btamyw4txrvit" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://bidu5e4ynknqs" path="res://sprites/window colored.png" id="4_458eo"]
 [ext_resource type="Texture2D" uid="uid://7r740j5i7in5" path="res://sprites/fridge color.png" id="7_pr1ej"]
 [ext_resource type="Script" uid="uid://ni4g0tkl7njy" path="res://scenes/area_2d.gd" id="8_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://dcjtk1rmhsryf" path="res://Music/fridge open.mp3" id="9_4nbsr"]
 [ext_resource type="Script" uid="uid://cxitp8j7cupf3" path="res://scenes/fridge.gd" id="9_sww3w"]
+[ext_resource type="AudioStream" uid="uid://iuwlwghslgx7" path="res://Music/fridge close.mp3" id="10_fkywm"]
 [ext_resource type="Texture2D" uid="uid://88c23yx0mqg7" path="res://sprites/Fridge Sprite.png" id="10_qnb83"]
 [ext_resource type="Script" uid="uid://bsdc6xfm3cglh" path="res://scripts/canvas_layer.gd" id="10_vtaks"]
 [ext_resource type="FontFile" uid="uid://oat1w7uvyamo" path="res://fonts/Special_Elite/SpecialElite-Regular.ttf" id="11_kvpfn"]
 [ext_resource type="Script" uid="uid://b3gtaghnuy2cn" path="res://scenes/journal_area.gd" id="11_suyxu"]
-[ext_resource type="AudioStream" uid="uid://5unghyvweeq5" path="res://Music/fridge-open-and-close-100149.mp3" id="11_sww3w"]
 [ext_resource type="Texture2D" uid="uid://5bavhvbvmvsn" path="res://sprites/Window.PNG" id="12_ir15t"]
 [ext_resource type="Script" uid="uid://cis3o2721306s" path="res://scenes/plant_area.gd" id="12_pl11u"]
 [ext_resource type="Texture2D" uid="uid://b5jhyri2f8yeb" path="res://sprites/IMG_4333.PNG" id="13_ir15t"]
@@ -34,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://6d1rp43fsgkg" path="res://sprites/toaster1.png" id="23_7nv0b"]
 [ext_resource type="AudioStream" uid="uid://clysrjirbt22m" path="res://Music/ticking-and-ringing-of-an-old-spring-alarm-clock-sound-effect-338285-[AudioTrimmer.com].mp3" id="23_458eo"]
 [ext_resource type="Script" uid="uid://co0j56isvbf4w" path="res://scenes/fridge_find.gd" id="23_m4url"]
-[ext_resource type="Script" uid="uid://dkhhghrpcm1dp" path="res://scenes/zoom_in_1.gd" id="23_suyxu"]
 [ext_resource type="Texture2D" uid="uid://ln3d2ears1ru" path="res://sprites/toaster2.png" id="24_o8oq8"]
 [ext_resource type="Script" uid="uid://d16b317pst58j" path="res://scenes/fridge_pulse.gd" id="25_n8ral"]
 [ext_resource type="Script" uid="uid://j03lyvt4f460" path="res://scenes/window_find_2.gd" id="25_oaba0"]
@@ -61,7 +61,6 @@
 [ext_resource type="Texture2D" uid="uid://dhsgyvh6np8uu" path="res://sprites/umbrelladots.png" id="34_753oq"]
 [ext_resource type="Script" uid="uid://bnro6klm0i0pr" path="res://scripts/magnifying_effect.gd" id="34_js0lu"]
 [ext_resource type="Texture2D" uid="uid://6i3tbsew68ov" path="res://sprites/zoom in 4.png" id="36_i4re6"]
-[ext_resource type="Script" uid="uid://cs1gbim1mpick" path="res://scenes/zoom_in_2.gd" id="36_q8j3a"]
 [ext_resource type="Texture2D" uid="uid://b873x43mf2o1j" path="res://sprites/bg.png" id="36_twgab"]
 [ext_resource type="Script" uid="uid://ch3utioq4oxj2" path="res://scenes/toaster_find.gd" id="38_3x338"]
 [ext_resource type="Texture2D" uid="uid://qxem08wnlojk" path="res://sprites/zoom in 5.png" id="38_7ixpq"]
@@ -69,7 +68,6 @@
 [ext_resource type="Script" uid="uid://b4dvohyj35see" path="res://scenes/umbrella.gd" id="38_ms3bu"]
 [ext_resource type="Script" uid="uid://duib3p1i6vdst" path="res://scenes/journal_pulse.gd" id="39_7gkqi"]
 [ext_resource type="AudioStream" uid="uid://38w4yx4fgsk5" path="res://Music/magic-244951.mp3" id="40_05nbr"]
-[ext_resource type="Script" uid="uid://defeib8k85bql" path="res://scenes/zoom_in_4.gd" id="40_7ixpq"]
 [ext_resource type="PackedScene" uid="uid://b7j53rnva35n1" path="res://scenes/umbrella_status_bar.tscn" id="41_q8j3a"]
 [ext_resource type="Script" uid="uid://dpwbg0ek53sg6" path="res://scenes/umbrella_status_bar.gd" id="42_ms3bu"]
 [ext_resource type="Texture2D" uid="uid://cifmdny3h4rf1" path="res://scenes/glow.tres" id="42_s0g06"]
@@ -575,9 +573,11 @@ sprite_frames = SubResource("SpriteFrames_pl11u")
 animation = &"closed"
 autoplay = "closed"
 
-[node name="Fridge Sound" type="AudioStreamPlayer2D" parent="Interactive/Fridge Area/Fridge/FridgeAnim"]
-stream = ExtResource("11_sww3w")
-volume_db = 17.165
+[node name="fridge open" type="AudioStreamPlayer" parent="Interactive/Fridge Area/Fridge/FridgeAnim"]
+stream = ExtResource("9_4nbsr")
+
+[node name="fridge close" type="AudioStreamPlayer" parent="Interactive/Fridge Area/Fridge/FridgeAnim"]
+stream = ExtResource("10_fkywm")
 
 [node name="Journal Area" type="Area2D" parent="Interactive"]
 script = ExtResource("11_suyxu")
@@ -873,10 +873,11 @@ visible = false
 position = Vector2(-3179, -306)
 texture = ExtResource("51_vgxg3")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("timer")]
 scale = Vector2(1.135, 1.135)
 transform = Transform2D(1.135, 0, 0, 1.135, 0, 0)
 script = ExtResource("10_vtaks")
+timer = NodePath("Timer")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
@@ -906,35 +907,35 @@ visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
 texture = ExtResource("16_264po")
-script = ExtResource("23_suyxu")
+script = ExtResource("32_3hbvx")
 
 [node name="ZoomIn2" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
 texture = ExtResource("28_8ool0")
-script = ExtResource("36_q8j3a")
+script = ExtResource("32_3hbvx")
 
 [node name="ZoomIn3" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
 texture = ExtResource("31_458eo")
-script = ExtResource("23_suyxu")
+script = ExtResource("32_3hbvx")
 
 [node name="ZoomIn5" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
 texture = ExtResource("38_7ixpq")
-script = ExtResource("23_suyxu")
+script = ExtResource("32_3hbvx")
 
 [node name="ZoomIn6" type="Sprite2D" parent="CanvasLayer"]
 visible = false
 position = Vector2(510.13214, 320.70483)
 scale = Vector2(0.38951355, 0.3895137)
 texture = ExtResource("57_1yg85")
-script = ExtResource("23_suyxu")
+script = ExtResource("32_3hbvx")
 
 [node name="Umbrella" type="Area2D" parent="CanvasLayer"]
 position = Vector2(510.13214, 320.70483)
@@ -952,11 +953,13 @@ visible = false
 position = Vector2(-81.2724, 366.3369)
 rotation = 1.5455955
 texture = ExtResource("36_i4re6")
-script = ExtResource("40_7ixpq")
+script = ExtResource("32_3hbvx")
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 wait_time = 3.0
 one_shot = true
+
+[node name="Zoom In" type="Node" parent="CanvasLayer"]
 
 [node name="UmbrellaStatusBar" parent="." instance=ExtResource("41_q8j3a")]
 layer = 0

@@ -6,6 +6,7 @@ extends Area2D
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"):
 		zoom_in_4.visible=false
+		Global.zoom_in = false
 	
 	if zoom_in_4.visible == true:
 		if event.is_action_pressed("left_click") and hovering_object:
@@ -18,7 +19,7 @@ func _input(event: InputEvent) -> void:
 @export_multiline var message_text : String = ""
 
 var pointer = load("res://sprites/pointer.png")
-var clicker = load("res://sprites/Clicker.png")
+var clicker = preload("uid://btw3iel4apm6u")
 
 func _on_mouse_entered() -> void:
 	if Global.is_magnifier_pick_up and zoom_in_4.visible == true:

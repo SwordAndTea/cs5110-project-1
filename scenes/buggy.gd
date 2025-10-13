@@ -7,7 +7,7 @@ extends Area2D
 @onready var magic: AudioStreamPlayer = $"../magic"
 @onready var zoom_in_7: Sprite2D = $"../../CanvasLayer/ZoomIn7"
 var pointer = load("res://sprites/pointer.png")
-var clicker = load("res://sprites/Clicker.png")
+var clicker = preload("uid://btw3iel4apm6u")
 var bugfound = false
 
 @export_multiline var message_text : String = ""

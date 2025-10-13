@@ -9,6 +9,8 @@ var focus_on = false
 var alarm = false
 var did_bus_leave = false
 var cutscene_done = false
+var zoom_in = false
+var hover = false
 
 signal magnifier_pick_up
 signal umbrella_pick_up

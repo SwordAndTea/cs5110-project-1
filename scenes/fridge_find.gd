@@ -7,8 +7,8 @@ extends Area2D
 
 signal fridgefound
 
-var pointer = load("res://sprites/pointer.png")
-var clicker = load("res://sprites/Clicker.png")
+var pointer = load("uid://bvcwntyc2p6yq")
+var clicker = preload("uid://btw3iel4apm6u")
 
 func _on_mouse_entered() -> void:
 	if Global.is_magnifier_pick_up and Global.focus_on==true:

@@ -55,8 +55,8 @@ func _on_inside_detect_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		has_triggered_switch_back_to_indoor_scene = false
 
-var pointer = load("res://sprites/pointer.png")
-var clicker = load("res://sprites/Clicker.png")
+var pointer = load("uid://bvcwntyc2p6yq")
+var clicker = preload("uid://btw3iel4apm6u")
 
 #func _on_end_game_body_entered(body: Node2D) -> void:
 	#if body is CharacterBody2D:

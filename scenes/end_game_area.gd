@@ -7,8 +7,8 @@ extends Area2D
 @onready var umbrella: AnimatedSprite2D = $"../player/umbrella"
 @onready var rain_end: AnimationPlayer = $"../rain end"
 
-var pointer = load("res://sprites/pointer.png")
-var clicker = load("res://sprites/Clicker.png")
+var pointer = load("uid://bvcwntyc2p6yq")
+var clicker = preload("uid://btw3iel4apm6u")
 
 func _ready():
 	rich_text_label.visible = false
